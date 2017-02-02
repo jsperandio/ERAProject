@@ -48,16 +48,27 @@
   <ItemGroup>
     <Compile Include="Class\Player\Player.cs" />
     <Compile Include="Class\Player\StatusList.cs" />
-    <Compile Include="FrmInitial.cs">
+    <Compile Include="Forms\FrmInitial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInitial.Designer.cs">
+    <Compile Include="Forms\FrmInitial.Designer.cs">
       <DependentUpon>FrmInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMap.Designer.cs">
+      <DependentUpon>FrmMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyProgressBarColor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmInitial.resx">
+    <Compile Include="Class\Map\Tile.cs" />
+    <EmbeddedResource Include="Forms\FrmInitial.resx">
       <DependentUpon>FrmInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMap.resx">
+      <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

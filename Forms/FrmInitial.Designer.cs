@@ -325,6 +325,7 @@
             this.button11.Size = new System.Drawing.Size(27, 15);
             this.button11.TabIndex = 25;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Visible = false;
             // 
             // button9
             // 
@@ -335,6 +336,7 @@
             this.button9.Size = new System.Drawing.Size(27, 15);
             this.button9.TabIndex = 24;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Visible = false;
             // 
             // button10
             // 
@@ -345,6 +347,7 @@
             this.button10.Size = new System.Drawing.Size(27, 15);
             this.button10.TabIndex = 23;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Visible = false;
             // 
             // button8
             // 
@@ -355,6 +358,7 @@
             this.button8.Size = new System.Drawing.Size(27, 15);
             this.button8.TabIndex = 22;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
             // 
             // button7
             // 
@@ -365,6 +369,7 @@
             this.button7.Size = new System.Drawing.Size(27, 15);
             this.button7.TabIndex = 21;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
             // 
             // button6
             // 
@@ -482,6 +487,7 @@
             this.Controls.Add(this.grpbPlayerInfo);
             this.Controls.Add(this.pnEvents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(300, 350);
             this.Name = "FrmInitial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

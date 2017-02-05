@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Map\Map.cs" />
     <Compile Include="Class\Player\Player.cs" />
     <Compile Include="Class\Player\StatusList.cs" />
     <Compile Include="Forms\FrmInitial.cs">
@@ -93,7 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <Folder Include="Class\Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoadFiles\Map.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

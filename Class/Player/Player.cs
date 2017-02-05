@@ -84,7 +84,7 @@ namespace ERAProject.Class
         public Player()
         {
             Name = "Test";
-            Hitpoints = 10;
+            Hitpoints = 100;
             Level = 1;
             Gold = 50;
             ExperiencePoints = 0;

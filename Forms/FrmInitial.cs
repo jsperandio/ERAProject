@@ -52,6 +52,14 @@ namespace ERAProject
             lbCurrentLevel.DataBindings.Add("Text", p, "Level");
             lbCurrentGold.DataBindings.Add("Text", p, "Gold");
             lbCurrentXp.DataBindings.Add("Text", p, "ExperiencePoints");
+
+            ttbPlayerStr.DataBindings.Add("Text", p.StatusPlayer, "Strength");
+            ttbPlayerDef.DataBindings.Add("Text", p.StatusPlayer, "Defense");
+            ttbPlayerSpd.DataBindings.Add("Text", p.StatusPlayer, "Speed");
+            ttbPlayerDex.DataBindings.Add("Text", p.StatusPlayer, "Dextery");
+            ttbPlayerLuk.DataBindings.Add("Text", p.StatusPlayer, "Luck");
+
+
         }
     }
 }

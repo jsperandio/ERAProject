@@ -34,7 +34,7 @@
             // 
             // pbMapViewer
             // 
-            this.pbMapViewer.BackColor = System.Drawing.Color.White;
+            this.pbMapViewer.BackColor = System.Drawing.Color.Blue;
             this.pbMapViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbMapViewer.Location = new System.Drawing.Point(0, 0);
             this.pbMapViewer.Name = "pbMapViewer";
@@ -53,7 +53,6 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.pbMapViewer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMap";
             this.Text = "Map Viewer";

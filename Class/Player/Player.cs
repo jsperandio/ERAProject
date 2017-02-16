@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ERAProject.Class.Maps;
+using System.ComponentModel;
 
 namespace ERAProject.Class
 {
@@ -10,6 +11,7 @@ namespace ERAProject.Class
         private int _gold;
         private int _level;
         private int _experiencePoints;
+        private Tile _playerCurrentTile;
         public StatusList StatusPlayer { get; set; }
 
         #region Encapsulate Fields
@@ -78,6 +80,19 @@ namespace ERAProject.Class
                 OnPropertyChanged("Level");
             }
         }
+
+        internal Tile PlayerCurrentTile
+        {
+            get
+            {
+                return _playerCurrentTile;
+            }
+
+            set
+            {
+                _playerCurrentTile = value;
+            }
+        }
         #endregion
 
         #region Constructors
@@ -85,9 +100,10 @@ namespace ERAProject.Class
         {
             Name = "Test";
             Hitpoints = 100;
-            Level = 1;
             Gold = 50;
+            Level = 1;
             ExperiencePoints = 0;
+            _playerCurrentTile = null;
             StatusPlayer = new StatusList();
         }
         #endregion

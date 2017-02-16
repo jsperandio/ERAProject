@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace ERAProject
+namespace ERAProject.Class.Maps
 {
     class Tile
     {

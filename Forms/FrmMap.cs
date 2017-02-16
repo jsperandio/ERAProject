@@ -1,4 +1,5 @@
-﻿using ERAProject.Class.Map;
+﻿using ERAProject.Class;
+using ERAProject.Class.Maps;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -14,7 +15,7 @@ namespace ERAProject
 
         public FrmMap()
         {
-            mapComplete = new Map(1);
+            mapComplete = GlobalVariables.Map;
             InitializeComponent();
         }
 

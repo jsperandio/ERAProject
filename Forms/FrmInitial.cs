@@ -1,6 +1,6 @@
 ﻿using ERAProject.Class;
+using ERAProject.Class.Controllers;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject
@@ -8,10 +8,24 @@ namespace ERAProject
     public partial class FrmInitial : Form
     {
         private Player p;
+        private CtrlMap cMap;
 
         public FrmInitial()
         {
+            InitializeGame();
+            cMap = GlobalVariables.CMap;
+            p = GlobalVariables.User;
             InitializeComponent();
+
+            BindingControls();
+        }
+
+        private void InitializeGame()
+        {
+            GlobalVariables.CMap = new CtrlMap();
+            GlobalVariables.CMap.ContructMap(1);
+            GlobalVariables.CPlayer = new CtrlPlayer();
+            GlobalVariables.CPlayer.ConstructPlayer(1);
         }
 
         //private void T_Tick(object sender, EventArgs e)
@@ -36,12 +50,10 @@ namespace ERAProject
             //t = new Timer();
             //t.Tick += T_Tick;
             //t.Interval = 1500;
-            p = new Player();
-            FrmMap map = new FrmMap();
+         
+            cMap.ShowMap(Width+Left,Top);
+            cMap.SendPlayerTo(1,1);
             
-            map.Show(this);
-            map.Location = new Point(Left + Width, Top);
-            BindingControls();
 
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
-namespace ERAProject.Class.Map
+namespace ERAProject.Class.Maps
 {
     class Map
     {

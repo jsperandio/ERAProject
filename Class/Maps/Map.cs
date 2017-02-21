@@ -87,6 +87,25 @@ namespace ERAProject.Class.Maps
             return x > 0 ? true : false;
         }
 
+        public bool DrawPlayerPosition(Tile tile,Graphics gr)
+        {
+            if (tile == null)
+                return false;
+            else
+            {
+                string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                Image imag = Image.FromFile(path + "\\LoadFiles\\player-flag.png");
+                PointF[] points = HexToPoints(_tileHeight, tile.Point.X, tile.Point.Y);
+
+                float x = ((points[0].X + points[3].X) / 3 )+8;
+                float y = ((points[1].Y + points[4].Y) / 2)-15;
+
+                gr.DrawImage(imag,x,y );
+
+                //gr.DrawPolygon(Pens.Cyan, HexToPoints(_tileHeight, tile.Point.X, tile.Point.Y));
+            }
+            return true;
+        }
 
         public void FillMapHexagons(Graphics gr)
         {
@@ -268,9 +287,9 @@ namespace ERAProject.Class.Maps
 
         public Tile PointToTile(float x, float y)
         {
-            int a=0, b=0;
-            PointToHex(x, y, _tileHeight,out a, out b);
-            PointF polygon = new PointF(a, b);
+            //int a=0, b=0;
+            //PointToHex(x, y, _tileHeight,out a, out b);
+            PointF polygon = new PointF(x, y);
             Tile t = _tiles.Find(polyg => polyg.Point.Equals(polygon));
             return t;
         }
@@ -282,3 +301,4 @@ namespace ERAProject.Class.Maps
         }
     }
 }
+

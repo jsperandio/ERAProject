@@ -5,13 +5,13 @@ namespace ERAProject.Class
 {
     static class GlobalVariables
     {
-        private static Player _user;
-        private static CtrlPlayer _cPlayer;
+        private static Player _user=null;
+        private static CtrlPlayer _cPlayer=null;
         private static Map _map=null;
-        private static CtrlMap cMap=null;
+        private static CtrlMap _cMap=null;
 
         #region Encapsulate Fields
-        internal static Maps.Map Map
+        internal static Map Map
         {
             get
             {
@@ -28,12 +28,12 @@ namespace ERAProject.Class
         {
             get
             {
-                return cMap;
+                return _cMap;
             }
 
             set
             {
-                cMap = value;
+                _cMap = value;
             }
         }
 

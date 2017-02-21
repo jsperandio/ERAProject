@@ -14,14 +14,14 @@ namespace ERAProject.Class.Controllers
 
         public void ShowMap(int x, int y)
         {
-            FrmMap map = new FrmMap();
-            map.Show();
-            map.Location = new Point(x, y);
+            FrmMap form_map = new FrmMap();
+            form_map.Show();
+            form_map.Location = new Point(x, y);
         }
 
-        public void SendPlayerTo(int x, int y)
+        public Tile GetTileByXY(int x, int y)
         {
-            
+            return GlobalVariables.Map.PointToTile(x, y);
         }
     }
 }

@@ -7,16 +7,15 @@ namespace ERAProject
 {
     public partial class FrmInitial : Form
     {
-        private Player p;
-        private CtrlMap cMap;
+        private CtrlPlayer ctrlPlayer;
+        private CtrlMap ctrlMap;
 
         public FrmInitial()
         {
             InitializeGame();
-            cMap = GlobalVariables.CMap;
-            p = GlobalVariables.User;
+            ctrlMap = GlobalVariables.CMap;
+            ctrlPlayer = GlobalVariables.CPlayer;
             InitializeComponent();
-
             BindingControls();
         }
 
@@ -37,9 +36,9 @@ namespace ERAProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            p.Name = "APERTOU BOTÃO";
-            p.Hitpoints = 100;
-            //if (!t.Enabled)
+            //p.Name = "APERTOU BOTÃO";
+            //p.Hitpoints = 100;
+            ////if (!t.Enabled)
             //    t.Start();
             //else
             //    t.Stop();
@@ -50,27 +49,33 @@ namespace ERAProject
             //t = new Timer();
             //t.Tick += T_Tick;
             //t.Interval = 1500;
-         
-            cMap.ShowMap(Width+Left,Top);
-            cMap.SendPlayerTo(1,1);
-            
+            ctrlPlayer.SendPlayer(8, 2);
+            ctrlMap.ShowMap(Width + Left, Top);
+
+
 
         }
 
         private void BindingControls()
         {
-            grpbPlayerInfo.DataBindings.Add(new Binding("Text", p, "Name"));
-            lbCurrentHitPoints.DataBindings.Add("Text", p, "Hitpoints");
-            lbCurrentLevel.DataBindings.Add("Text", p, "Level");
-            lbCurrentGold.DataBindings.Add("Text", p, "Gold");
-            lbCurrentXp.DataBindings.Add("Text", p, "ExperiencePoints");
+            string controlPropName;
 
-            ttbPlayerStr.DataBindings.Add("Text", p.StatusPlayer, "Strength");
-            ttbPlayerDef.DataBindings.Add("Text", p.StatusPlayer, "Defense");
-            ttbPlayerSpd.DataBindings.Add("Text", p.StatusPlayer, "Speed");
-            ttbPlayerDex.DataBindings.Add("Text", p.StatusPlayer, "Dextery");
-            ttbPlayerLuk.DataBindings.Add("Text", p.StatusPlayer, "Luck");
+            #region BindingControlText
+            controlPropName = "Text";
 
+            grpbPlayerInfo.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Name"));
+            lbCurrentHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
+            lbCurrentLevel.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Level"));
+            lbCurrentGold.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Gold"));
+            lbCurrentXp.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "ExperiencePoints"));
+
+            ttbPlayerStr.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Strength"));
+            ttbPlayerDef.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Defense"));
+            ttbPlayerSpd.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Speed"));
+            ttbPlayerDex.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Dextery"));
+            ttbPlayerLuk.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Luck"));
+
+            #endregion
 
         }
     }

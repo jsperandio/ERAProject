@@ -1,4 +1,5 @@
 ﻿using ERAProject.Class;
+using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
 using System;
 using System.Drawing;
@@ -13,8 +14,11 @@ namespace ERAProject
 
         private Map mapComplete;
 
+        private CtrlPlayer ctrlPlayer; 
+
         public FrmMap()
         {
+            ctrlPlayer = GlobalVariables.CPlayer;
             mapComplete = GlobalVariables.Map;
             InitializeComponent();
         }
@@ -37,6 +41,8 @@ namespace ERAProject
                 0, pbMapViewer.ClientSize.Width,
                 0, pbMapViewer.ClientSize.Height,
                 mapComplete.TileHeight);
+
+            mapComplete.DrawPlayerPosition(ctrlPlayer.GetPlayerTile(),e.Graphics);
 
 
         }

@@ -27,7 +27,7 @@ namespace ERAProject.Class.Controllers
 
         public void SendPlayer(int x,int y)
         {
-            GlobalVariables.User.PlayerCurrentTile = GlobalVariables.CMap.GetTileByXY(x,y);
+            GlobalVariables.User.PlayerCurrentTile = GlobalVariables.CMap.GetTileByXy(x,y);
         }
 
         public Tile GetPlayerTile()

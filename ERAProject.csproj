@@ -88,7 +88,6 @@
     <Compile Include="Forms\FrmMap.Designer.cs">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyProgressBarColor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\Maps\Tile.cs" />
@@ -124,6 +123,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="LoadFiles\Human_Head-32.png" />
     <Content Include="LoadFiles\Map.txt" />
     <Content Include="LoadFiles\player-flag.png" />
   </ItemGroup>

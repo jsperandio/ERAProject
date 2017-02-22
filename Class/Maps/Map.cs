@@ -8,24 +8,12 @@ namespace ERAProject.Class.Maps
     class Map
     {
         private List<Tile> _selectedTiles;
-
         private List<Tile> _tiles;
         // The height of a hexagon.
         private float _tileHeight;
-
         private int _mapStyle;
 
-        public Map(int mapStyleCreate)
-        {
-            MapStyle = mapStyleCreate;
-            if(mapStyleCreate ==1 )
-            {
-                _tileHeight = 32;
-                _tiles = new List<Tile>();
-                _selectedTiles = new List<Tile>();
-                ImportMap();
-            }
-        }
+        #region Encapsulate Fields
 
         public float TileHeight
         {
@@ -53,6 +41,22 @@ namespace ERAProject.Class.Maps
             }
         }
 
+        #endregion
+
+        #region Constructors
+
+        public Map(int mapStyleCreate)
+        {
+            MapStyle = mapStyleCreate;
+            if (mapStyleCreate == 1)
+            {
+                _tileHeight = 32;
+                _tiles = new List<Tile>();
+                _selectedTiles = new List<Tile>();
+                ImportMap();
+            }
+        }
+        #endregion
 
         // Load map by file
         public bool ImportMap()
@@ -87,25 +91,7 @@ namespace ERAProject.Class.Maps
             return x > 0 ? true : false;
         }
 
-        public bool DrawPlayerPosition(Tile tile,Graphics gr)
-        {
-            if (tile == null)
-                return false;
-            else
-            {
-                string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                Image imag = Image.FromFile(path + "\\LoadFiles\\player-flag.png");
-                PointF[] points = HexToPoints(_tileHeight, tile.Point.X, tile.Point.Y);
-
-                float x = ((points[0].X + points[3].X) / 3 )+8;
-                float y = ((points[1].Y + points[4].Y) / 2)-15;
-
-                gr.DrawImage(imag,x,y );
-
-                //gr.DrawPolygon(Pens.Cyan, HexToPoints(_tileHeight, tile.Point.X, tile.Point.Y));
-            }
-            return true;
-        }
+        #region Draw Methods
 
         public void FillMapHexagons(Graphics gr)
         {
@@ -144,9 +130,7 @@ namespace ERAProject.Class.Maps
         }
 
         // Draw a hexagonal grid for the indicated area.
-        // (You might be able to draw the hexagons without
-        // drawing any duplicate edges, but this is a lot easier.)
-        public void DrawHexGrid(Graphics gr, Pen pen,
+        public void DrawHexagonsGrid(Graphics gr, Pen pen,
             float xmin, float xmax, float ymin, float ymax,
             float height)
         {
@@ -199,6 +183,8 @@ namespace ERAProject.Class.Maps
                 graph.FillPolygon(color, HexToPoints(_tileHeight, point.X, point.Y));
             }
         }
+
+        #endregion
 
         // Return the points that define the indicated hexagon.
         public PointF[] HexToPoints(float height, float row, float col)
@@ -285,11 +271,18 @@ namespace ERAProject.Class.Maps
             }
         }
 
+        public Tile XyToTile(int x, int y)
+        {
+            PointF polygon = new PointF(x, y);
+            Tile t = _tiles.Find(polyg => polyg.Point.Equals(polygon));
+            return t;
+        }
+
         public Tile PointToTile(float x, float y)
         {
-            //int a=0, b=0;
-            //PointToHex(x, y, _tileHeight,out a, out b);
-            PointF polygon = new PointF(x, y);
+            int a = 0, b = 0;
+            PointToHex(x, y, _tileHeight, out a, out b);
+            PointF polygon = new PointF(a, b);
             Tile t = _tiles.Find(polyg => polyg.Point.Equals(polygon));
             return t;
         }

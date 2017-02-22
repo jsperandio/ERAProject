@@ -1,5 +1,6 @@
 ﻿using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
+using System.IO;
 
 namespace ERAProject.Class
 {
@@ -9,6 +10,7 @@ namespace ERAProject.Class
         private static CtrlPlayer _cPlayer=null;
         private static Map _map=null;
         private static CtrlMap _cMap=null;
+        private static string _projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
         #region Encapsulate Fields
         internal static Map Map
@@ -60,6 +62,19 @@ namespace ERAProject.Class
             set
             {
                 _cPlayer = value;
+            }
+        }
+
+        public static string ProjectPath
+        {
+            get
+            {
+                return _projectPath;
+            }
+
+            set
+            {
+                _projectPath = value;
             }
         }
         #endregion

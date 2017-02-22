@@ -10,15 +10,18 @@ namespace ERAProject
 {
     public partial class FrmMap : Form
     {
-        private ToolTip Current_tip;
+        //private ToolTip Current_tip;
 
         private Map mapComplete;
 
-        private CtrlPlayer ctrlPlayer; 
+        private CtrlPlayer ctrlPlayer;
+
+        private CtrlMap ctrlMap;
 
         public FrmMap()
         {
             ctrlPlayer = GlobalVariables.CPlayer;
+            ctrlMap = GlobalVariables.CMap;
             mapComplete = GlobalVariables.Map;
             InitializeComponent();
         }
@@ -33,17 +36,9 @@ namespace ERAProject
             //    //e.Graphics.FillPolygon(Brushes.LightBlue,HexToPoints(HexHeight, point.X, point.Y));
             //    e.Graphics.FillPolygon(Brushes.Purple, HexToPoints(HexHeight, point.X, point.Y));
             //}
+            ctrlMap.DrawBaseMap(e.Graphics,Pens.Black,pbMapViewer.ClientSize);
 
-            // Color map
-            mapComplete.FillMapHexagons(e.Graphics);
-            // Draw the grid.
-            mapComplete.DrawHexGrid(e.Graphics, Pens.Black,
-                0, pbMapViewer.ClientSize.Width,
-                0, pbMapViewer.ClientSize.Height,
-                mapComplete.TileHeight);
-
-            mapComplete.DrawPlayerPosition(ctrlPlayer.GetPlayerTile(),e.Graphics);
-
+            ctrlMap.DrawPlayerOnMap(ctrlPlayer.GetPlayerTile(), e.Graphics);
 
         }
 
@@ -58,9 +53,9 @@ namespace ERAProject
         */
         private void pbMapViewer_MouseMove(object sender, MouseEventArgs e)
         {
-            int row, col;
-            mapComplete.PointToHex(e.X, e.Y, mapComplete.TileHeight, out row, out col);
-            Text = "(" + row + ", " + col + ")";
+            Point mouse_location = e.Location;
+            mouse_location= ctrlMap.ScreenToXy(mouse_location);
+            Text = "(" + mouse_location.X + ", " + mouse_location.Y + ")";
         }
 
         /*
@@ -72,7 +67,7 @@ namespace ERAProject
 
             if (ModifierKeys == Keys.Shift)
             {
-                Tile t = mapComplete.PointToTile(e.X, e.Y);
+                Tile t = ctrlMap.ScreenToTile(e.Location);
                 if (t != null)
                 {
                     MessageBox.Show(t.Hint + "\n Line:" + t.Row + " Collum:"+t.Collum);

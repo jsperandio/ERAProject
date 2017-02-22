@@ -21,10 +21,10 @@ namespace ERAProject
 
         private void InitializeGame()
         {
-            GlobalVariables.CMap = new CtrlMap();
-            GlobalVariables.CMap.ContructMap(1);
             GlobalVariables.CPlayer = new CtrlPlayer();
             GlobalVariables.CPlayer.ConstructPlayer(1);
+            GlobalVariables.CMap = new CtrlMap();
+            GlobalVariables.CMap.ContructMap(1);
         }
 
         //private void T_Tick(object sender, EventArgs e)

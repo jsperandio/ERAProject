@@ -1,5 +1,6 @@
 ﻿using ERAProject.Class.Maps;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace ERAProject.Class
 {
@@ -12,6 +13,7 @@ namespace ERAProject.Class
         private int _level;
         private int _experiencePoints;
         private Tile _playerCurrentTile;
+        private Image _playerImage;
         public StatusList StatusPlayer { get; set; }
 
         #region Encapsulate Fields
@@ -93,6 +95,19 @@ namespace ERAProject.Class
                 _playerCurrentTile = value;
             }
         }
+
+        public Image PlayerImage
+        {
+            get
+            {
+                return _playerImage;
+            }
+
+            set
+            {
+                _playerImage = value;
+            }
+        }
         #endregion
 
         #region Constructors
@@ -104,6 +119,7 @@ namespace ERAProject.Class
             Level = 1;
             ExperiencePoints = 0;
             _playerCurrentTile = null;
+            PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\LoadFiles\\Human_Head-32.png");
             StatusPlayer = new StatusList();
         }
         #endregion

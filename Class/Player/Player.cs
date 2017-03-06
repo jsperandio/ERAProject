@@ -1,6 +1,7 @@
 ﻿using ERAProject.Class.Maps;
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ERAProject.Class
 {
@@ -8,6 +9,7 @@ namespace ERAProject.Class
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string _name;
+        private int _maxhitpoints;
         private int _hitpoints;
         private int _gold;
         private int _level;
@@ -54,7 +56,21 @@ namespace ERAProject.Class
                 OnPropertyChanged("Experiencepoints");
             }
         }
+        public int Maxhitpoints
+        {
+            get
+            {
+                return _maxhitpoints;
+            }
 
+            set
+            {
+                _maxhitpoints = value;
+                OnPropertyChanged("Level");
+            }
+        }
+
+        /* Validate max damage and max Heal on player */
         public int Hitpoints
         {
             get
@@ -64,7 +80,7 @@ namespace ERAProject.Class
 
             set
             {
-                _hitpoints = value;
+                _hitpoints = (value >= 0 ? (value <= _maxhitpoints ? value:_maxhitpoints) : 0);
                 OnPropertyChanged("Hitpoints");
             }
         }
@@ -114,7 +130,8 @@ namespace ERAProject.Class
         public Player()
         {
             Name = "Test";
-            Hitpoints = 100;
+            Maxhitpoints = 100;
+            Hitpoints = Maxhitpoints;
             Gold = 50;
             Level = 1;
             ExperiencePoints = 0;

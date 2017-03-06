@@ -10,10 +10,6 @@ namespace ERAProject
 {
     public partial class FrmMap : Form
     {
-        //private ToolTip Current_tip;
-
-        private Map mapComplete;
-
         private CtrlPlayer ctrlPlayer;
 
         private CtrlMap ctrlMap;
@@ -22,8 +18,8 @@ namespace ERAProject
         {
             ctrlPlayer = GlobalVariables.CPlayer;
             ctrlMap = GlobalVariables.CMap;
-            mapComplete = GlobalVariables.Map;
             InitializeComponent();
+            pbMapViewer.Left += 100; 
         }
 
         private void pbMapViewer_Paint(object sender, PaintEventArgs e)
@@ -36,10 +32,10 @@ namespace ERAProject
             //    //e.Graphics.FillPolygon(Brushes.LightBlue,HexToPoints(HexHeight, point.X, point.Y));
             //    e.Graphics.FillPolygon(Brushes.Purple, HexToPoints(HexHeight, point.X, point.Y));
             //}
+            
             ctrlMap.DrawBaseMap(e.Graphics,Pens.Black,pbMapViewer.ClientSize);
 
             ctrlMap.DrawPlayerOnMap(ctrlPlayer.GetPlayerTile(), e.Graphics);
-
         }
 
 
@@ -83,19 +79,6 @@ namespace ERAProject
             //    polygon = new PointF(row, col);
 
             //    if (ModifierKeys == Keys.Shift)
-            //    {
-            //        Tile t = Tiles.Find(x => x.Point.Equals(polygon));
-            //        if (t != null)
-            //        {
-            //            if (!t.Point.IsEmpty)
-            //            {
-            //                Current_tip = new ToolTip();
-            //                Current_tip.ToolTipTitle = "Description of Tyle";
-            //                Current_tip.Show(t.Hint, this, Cursor.Position.X, Cursor.Position.Y+25, 1000);
-            //            }
-            //        } 
-            //    }
-            //    else
             //    {
             //        if ((Hexagons.Find(x => x.Equals(polygon))).IsEmpty)
             //            Hexagons.Add(new PointF(row, col));

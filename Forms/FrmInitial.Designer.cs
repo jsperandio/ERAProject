@@ -32,6 +32,7 @@
             this.pnEvents = new System.Windows.Forms.Panel();
             this.rtbEventsLog = new System.Windows.Forms.RichTextBox();
             this.grpbPlayerInfo = new System.Windows.Forms.GroupBox();
+            this.prgbHitPoints = new CustomProgress.CustomProgressBar();
             this.lbCurrentStamina = new System.Windows.Forms.Label();
             this.lbCurrentHitPoints = new System.Windows.Forms.Label();
             this.lbCurrentGold = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             // 
             // grpbPlayerInfo
             // 
+            this.grpbPlayerInfo.Controls.Add(this.prgbHitPoints);
             this.grpbPlayerInfo.Controls.Add(this.lbCurrentStamina);
             this.grpbPlayerInfo.Controls.Add(this.lbCurrentHitPoints);
             this.grpbPlayerInfo.Controls.Add(this.lbCurrentGold);
@@ -111,6 +113,17 @@
             this.grpbPlayerInfo.TabStop = false;
             this.grpbPlayerInfo.Text = "Textix Testoar\'s";
             // 
+            // prgbHitPoints
+            // 
+            this.prgbHitPoints.Fade = 0;
+            this.prgbHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prgbHitPoints.Location = new System.Drawing.Point(81, 19);
+            this.prgbHitPoints.Name = "prgbHitPoints";
+            this.prgbHitPoints.Size = new System.Drawing.Size(174, 13);
+            this.prgbHitPoints.TabIndex = 12;
+            this.prgbHitPoints.Text = "100/100";
+            this.prgbHitPoints.Value = 100;
+            // 
             // lbCurrentStamina
             // 
             this.lbCurrentStamina.AutoSize = true;
@@ -125,7 +138,7 @@
             // 
             this.lbCurrentHitPoints.AutoSize = true;
             this.lbCurrentHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lbCurrentHitPoints.Location = new System.Drawing.Point(78, 19);
+            this.lbCurrentHitPoints.Location = new System.Drawing.Point(40, 19);
             this.lbCurrentHitPoints.Name = "lbCurrentHitPoints";
             this.lbCurrentHitPoints.Size = new System.Drawing.Size(13, 13);
             this.lbCurrentHitPoints.TabIndex = 10;
@@ -539,6 +552,7 @@
         private System.Windows.Forms.TextBox ttbPlayerDex;
         private System.Windows.Forms.TextBox ttbPlayerSpd;
         private System.Windows.Forms.TextBox ttbPlayerDef;
+        private CustomProgress.CustomProgressBar prgbHitPoints;
     }
 }
 

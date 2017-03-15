@@ -36,6 +36,7 @@ namespace ERAProject
             ctrlMap.DrawBaseMap(e.Graphics,Pens.Black,pbMapViewer.ClientSize);
 
             ctrlMap.DrawPlayerOnMap(ctrlPlayer.GetPlayerTile(), e.Graphics);
+            //ctrlMap.DrawStringOnTile(ctrlPlayer.GetPlayerTile(), e.Graphics, Font);
         }
 
 
@@ -69,6 +70,16 @@ namespace ERAProject
                     MessageBox.Show(t.Hint + "\n Line:" + t.Row + " Collum:"+t.Collum);
                 }
             }
+            if (ModifierKeys == Keys.Control)
+            {
+                Tile t = ctrlMap.ScreenToTile(e.Location);
+                if (t != null)
+                {
+                    ctrlPlayer.SendPlayer(t);
+                    pbMapViewer.Refresh();
+                }
+            }
+
 
             //mapComplete.PointToHex(e.X, e.Y, mapComplete.TileHeight, out row, out col);
 

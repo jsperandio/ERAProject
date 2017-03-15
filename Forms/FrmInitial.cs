@@ -36,7 +36,6 @@ namespace ERAProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //p.Name = "APERTOU BOTÃO";
             //p.Hitpoints = 100;
             ////if (!t.Enabled)
             //    t.Start();

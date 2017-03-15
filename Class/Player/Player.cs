@@ -1,7 +1,7 @@
 ﻿using ERAProject.Class.Maps;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ERAProject.Class
 {
@@ -129,7 +129,7 @@ namespace ERAProject.Class
         #region Constructors
         public Player()
         {
-            Name = "Test";
+            Name = "John Doe";
             Maxhitpoints = 100;
             Hitpoints = Maxhitpoints;
             Gold = 50;

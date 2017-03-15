@@ -58,12 +58,31 @@ namespace ERAProject.Class.Controllers
             { 
                 PointF[] points = GlobalVariables.Map.HexToPoints(GetTileHeight(), tile.Point.X, tile.Point.Y);
 
-                float x = ((points[0].X + points[3].X) / 3) + 8;
-                float y = ((points[1].Y + points[4].Y) / 2) - 15;
+                float x = ((points[0].X + points[1].X) / 2);
+                float y = ((points[0].Y + points[1].Y) / 2);
+
 
                 graphics.DrawImage(GlobalVariables.User.PlayerImage, x, y);
 
                 //gr.DrawPolygon(Pens.Cyan, HexToPoints(_tileHeight, tile.Point.X, tile.Point.Y));
+            }
+        }
+
+        public void DrawStringOnTile(Tile tile , Graphics graphics,Font originalFont)
+        {
+            using (StringFormat sf = new StringFormat())
+            {
+                PointF[] points = GlobalVariables.Map.HexToPoints(GetTileHeight(), tile.Point.X, tile.Point.Y);
+                sf.Alignment = StringAlignment.Center;
+                sf.LineAlignment = StringAlignment.Center;
+                
+                float x = (points[0].X + points[3].X) / 2;
+                float y = (points[1].Y + points[4].Y) / 2;
+                //string label = "(" + tile.Row.ToString() + ", " +
+                //     tile.Collum.ToString() + ")";
+                Font localFont = new Font(originalFont, FontStyle.Bold);
+                
+                graphics.DrawString(GlobalVariables.User.Name, localFont, Brushes.Black, x, y, sf);
             }
         }
     }

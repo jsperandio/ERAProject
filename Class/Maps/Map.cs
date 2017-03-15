@@ -55,6 +55,13 @@ namespace ERAProject.Class.Maps
                 _selectedTiles = new List<Tile>();
                 ImportMap();
             }
+            if (mapStyleCreate == 2)
+            {
+                _tileHeight = 16;
+                _tiles = new List<Tile>();
+                _selectedTiles = new List<Tile>();
+                ImportMap();
+            }
         }
         #endregion
 

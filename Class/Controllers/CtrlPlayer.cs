@@ -31,6 +31,11 @@ namespace ERAProject.Class.Controllers
             GlobalVariables.User.PlayerCurrentTile = GlobalVariables.CMap.GetTileByXy(x, y);
         }
 
+        public void SendPlayer(Tile t)
+        {
+            GlobalVariables.User.PlayerCurrentTile = t;
+        }
+
         public void EventPlayer_DamageTaken(int damageTaken)
         {
             GlobalVariables.User.Hitpoints -= damageTaken;

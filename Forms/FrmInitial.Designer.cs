@@ -50,21 +50,21 @@
             this.ttbPlayerSpd = new System.Windows.Forms.TextBox();
             this.ttbPlayerDef = new System.Windows.Forms.TextBox();
             this.ttbPlayerStr = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddStr = new System.Windows.Forms.Button();
+            this.btnRemoveStr = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRemoveDef = new System.Windows.Forms.Button();
+            this.btnAddDef = new System.Windows.Forms.Button();
+            this.btnAddSpd = new System.Windows.Forms.Button();
+            this.btnAddDex = new System.Windows.Forms.Button();
+            this.btnAddLuk = new System.Windows.Forms.Button();
+            this.btnRemoveSpd = new System.Windows.Forms.Button();
+            this.btnRemoveDex = new System.Windows.Forms.Button();
+            this.btnRemoveLuk = new System.Windows.Forms.Button();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -116,13 +116,14 @@
             // prgbHitPoints
             // 
             this.prgbHitPoints.Fade = 0;
-            this.prgbHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prgbHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prgbHitPoints.Location = new System.Drawing.Point(81, 19);
             this.prgbHitPoints.Name = "prgbHitPoints";
             this.prgbHitPoints.Size = new System.Drawing.Size(174, 13);
+            this.prgbHitPoints.Step = 1;
             this.prgbHitPoints.TabIndex = 12;
-            this.prgbHitPoints.Text = "100/100";
-            this.prgbHitPoints.Value = 100;
+            this.prgbHitPoints.Text = "95/100";
+            this.prgbHitPoints.Value = 95;
             // 
             // lbCurrentStamina
             // 
@@ -236,21 +237,21 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRemoveLuk);
+            this.groupBox1.Controls.Add(this.btnRemoveDex);
+            this.groupBox1.Controls.Add(this.btnRemoveSpd);
+            this.groupBox1.Controls.Add(this.btnAddLuk);
+            this.groupBox1.Controls.Add(this.btnAddDex);
+            this.groupBox1.Controls.Add(this.btnAddSpd);
+            this.groupBox1.Controls.Add(this.btnAddDef);
+            this.groupBox1.Controls.Add(this.btnRemoveDef);
             this.groupBox1.Controls.Add(this.ttbPlayerLuk);
             this.groupBox1.Controls.Add(this.ttbPlayerDex);
             this.groupBox1.Controls.Add(this.ttbPlayerSpd);
             this.groupBox1.Controls.Add(this.ttbPlayerDef);
             this.groupBox1.Controls.Add(this.ttbPlayerStr);
-            this.groupBox1.Controls.Add(this.button11);
-            this.groupBox1.Controls.Add(this.button9);
-            this.groupBox1.Controls.Add(this.button10);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnAddStr);
+            this.groupBox1.Controls.Add(this.btnRemoveStr);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -329,115 +330,27 @@
             this.ttbPlayerStr.Text = "0";
             this.ttbPlayerStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button11
+            // btnAddStr
             // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.Location = new System.Drawing.Point(144, 89);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(27, 15);
-            this.button11.TabIndex = 25;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Visible = false;
+            this.btnAddStr.FlatAppearance.BorderSize = 0;
+            this.btnAddStr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStr.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStr.Image")));
+            this.btnAddStr.Location = new System.Drawing.Point(144, 18);
+            this.btnAddStr.Name = "btnAddStr";
+            this.btnAddStr.Size = new System.Drawing.Size(27, 15);
+            this.btnAddStr.TabIndex = 21;
+            this.btnAddStr.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnRemoveStr
             // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(144, 72);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(27, 15);
-            this.button9.TabIndex = 24;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Visible = false;
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.Location = new System.Drawing.Point(144, 54);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(27, 15);
-            this.button10.TabIndex = 23;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(144, 36);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(27, 15);
-            this.button8.TabIndex = 22;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(144, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(27, 15);
-            this.button7.TabIndex = 21;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(52, 89);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(27, 15);
-            this.button6.TabIndex = 20;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(52, 72);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(27, 15);
-            this.button5.TabIndex = 19;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(52, 54);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(27, 15);
-            this.button4.TabIndex = 18;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(52, 36);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 15);
-            this.button3.TabIndex = 17;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(52, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 15);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.btnRemoveStr.FlatAppearance.BorderSize = 0;
+            this.btnRemoveStr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveStr.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveStr.Image")));
+            this.btnRemoveStr.Location = new System.Drawing.Point(52, 18);
+            this.btnRemoveStr.Name = "btnRemoveStr";
+            this.btnRemoveStr.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveStr.TabIndex = 4;
+            this.btnRemoveStr.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -489,6 +402,94 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "STR";
             // 
+            // btnRemoveDef
+            // 
+            this.btnRemoveDef.FlatAppearance.BorderSize = 0;
+            this.btnRemoveDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveDef.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDef.Image")));
+            this.btnRemoveDef.Location = new System.Drawing.Point(52, 36);
+            this.btnRemoveDef.Name = "btnRemoveDef";
+            this.btnRemoveDef.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveDef.TabIndex = 31;
+            this.btnRemoveDef.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDef
+            // 
+            this.btnAddDef.FlatAppearance.BorderSize = 0;
+            this.btnAddDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDef.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDef.Image")));
+            this.btnAddDef.Location = new System.Drawing.Point(144, 36);
+            this.btnAddDef.Name = "btnAddDef";
+            this.btnAddDef.Size = new System.Drawing.Size(27, 15);
+            this.btnAddDef.TabIndex = 32;
+            this.btnAddDef.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSpd
+            // 
+            this.btnAddSpd.FlatAppearance.BorderSize = 0;
+            this.btnAddSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSpd.Image")));
+            this.btnAddSpd.Location = new System.Drawing.Point(144, 54);
+            this.btnAddSpd.Name = "btnAddSpd";
+            this.btnAddSpd.Size = new System.Drawing.Size(27, 15);
+            this.btnAddSpd.TabIndex = 33;
+            this.btnAddSpd.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDex
+            // 
+            this.btnAddDex.FlatAppearance.BorderSize = 0;
+            this.btnAddDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDex.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDex.Image")));
+            this.btnAddDex.Location = new System.Drawing.Point(144, 72);
+            this.btnAddDex.Name = "btnAddDex";
+            this.btnAddDex.Size = new System.Drawing.Size(27, 15);
+            this.btnAddDex.TabIndex = 34;
+            this.btnAddDex.UseVisualStyleBackColor = true;
+            // 
+            // btnAddLuk
+            // 
+            this.btnAddLuk.FlatAppearance.BorderSize = 0;
+            this.btnAddLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLuk.Image")));
+            this.btnAddLuk.Location = new System.Drawing.Point(144, 89);
+            this.btnAddLuk.Name = "btnAddLuk";
+            this.btnAddLuk.Size = new System.Drawing.Size(27, 15);
+            this.btnAddLuk.TabIndex = 35;
+            this.btnAddLuk.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveSpd
+            // 
+            this.btnRemoveSpd.FlatAppearance.BorderSize = 0;
+            this.btnRemoveSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveSpd.Image")));
+            this.btnRemoveSpd.Location = new System.Drawing.Point(52, 54);
+            this.btnRemoveSpd.Name = "btnRemoveSpd";
+            this.btnRemoveSpd.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveSpd.TabIndex = 36;
+            this.btnRemoveSpd.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveDex
+            // 
+            this.btnRemoveDex.FlatAppearance.BorderSize = 0;
+            this.btnRemoveDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveDex.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDex.Image")));
+            this.btnRemoveDex.Location = new System.Drawing.Point(52, 72);
+            this.btnRemoveDex.Name = "btnRemoveDex";
+            this.btnRemoveDex.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveDex.TabIndex = 37;
+            this.btnRemoveDex.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveLuk
+            // 
+            this.btnRemoveLuk.FlatAppearance.BorderSize = 0;
+            this.btnRemoveLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveLuk.Image")));
+            this.btnRemoveLuk.Location = new System.Drawing.Point(52, 89);
+            this.btnRemoveLuk.Name = "btnRemoveLuk";
+            this.btnRemoveLuk.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveLuk.TabIndex = 38;
+            this.btnRemoveLuk.UseVisualStyleBackColor = true;
+            // 
             // FrmInitial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,22 +538,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddStr;
+        private System.Windows.Forms.Button btnRemoveStr;
         private System.Windows.Forms.TextBox ttbPlayerStr;
         private System.Windows.Forms.TextBox ttbPlayerLuk;
         private System.Windows.Forms.TextBox ttbPlayerDex;
         private System.Windows.Forms.TextBox ttbPlayerSpd;
         private System.Windows.Forms.TextBox ttbPlayerDef;
         private CustomProgress.CustomProgressBar prgbHitPoints;
+        private System.Windows.Forms.Button btnRemoveLuk;
+        private System.Windows.Forms.Button btnRemoveDex;
+        private System.Windows.Forms.Button btnRemoveSpd;
+        private System.Windows.Forms.Button btnAddLuk;
+        private System.Windows.Forms.Button btnAddDex;
+        private System.Windows.Forms.Button btnAddSpd;
+        private System.Windows.Forms.Button btnAddDef;
+        private System.Windows.Forms.Button btnRemoveDef;
     }
 }
 

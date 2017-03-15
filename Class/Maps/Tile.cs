@@ -12,7 +12,7 @@ namespace ERAProject.Class.Maps
         public Tile()
         {
             Type = 0;
-            Hint = "Tipo " + Type + "do piso";
+            Hint = "Tipo " + Type + " do piso";
         }
 
     }

@@ -1,8 +1,8 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
 using System;
-using System.Collections;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject
@@ -22,32 +22,15 @@ namespace ERAProject
             BindingControls();
         }
 
-        //private void T_Tick(object sender, EventArgs e)
-        //{
-        //    ++i;
-        //    rtbEventsLog.AppendText("Text"+i+" \n");
-        //    rtbEventsLog.ScrollToCaret();
-        //}
-
         private void button1_Click(object sender, EventArgs e)
         {
-            //p.Hitpoints = 100;
-            ////if (!t.Enabled)
-            //    t.Start();
-            //else
-            //    t.Stop();
             ctrlPlayer.EventPlayer_DamageTaken(500);
         }
 
         private void FrmInitial_Load(object sender, EventArgs e)
         {
-            //t = new Timer();
-            //t.Tick += T_Tick;
-            //t.Interval = 1500;
             ctrlPlayer.SendPlayer(8, 2);
             ctrlMap.ShowMap(Width + Left, Top);
-
-
         }
 
         private void BindingControls()
@@ -92,7 +75,8 @@ namespace ERAProject
                     {
                         for(int i=0; i<e.NewItems.Count; i++)
                         {
-                            rtbEventsLog.AppendText(e.NewItems[i].ToString() + Environment.NewLine);
+                            rtbEventsLog.AppendText(e.NewItems[i].ToString() + Environment.NewLine, Color.Red,Color.Blue);
+                            rtbEventsLog.ScrollToCaret();
                         }
                         break;
                     }

@@ -79,8 +79,9 @@
     <Compile Include="Class\Controllers\CtrlLog.cs" />
     <Compile Include="Class\Controllers\CtrlMap.cs" />
     <Compile Include="Class\Controllers\CtrlPlayer.cs" />
-    <Compile Include="Class\Log.cs" />
-    <Compile Include="Class\GlobalVariables.cs" />
+    <Compile Include="Class\Internal\Extensions.cs" />
+    <Compile Include="Class\Internal\Log.cs" />
+    <Compile Include="Class\Internal\GlobalVariables.cs" />
     <Compile Include="Class\Maps\Map.cs" />
     <Compile Include="Class\Player\Player.cs" />
     <Compile Include="Class\Player\StatusList.cs" />
@@ -129,10 +130,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\DataAcess\" />
-    <Folder Include="Class\Maps\Creatures\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="LoadFiles\Human_Head-32.png" />
     <Content Include="LoadFiles\Map.txt" />

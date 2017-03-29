@@ -88,6 +88,7 @@
             this.rtbEventsLog.BackColor = System.Drawing.Color.NavajoWhite;
             this.rtbEventsLog.Location = new System.Drawing.Point(4, 4);
             this.rtbEventsLog.Name = "rtbEventsLog";
+            this.rtbEventsLog.ReadOnly = true;
             this.rtbEventsLog.Size = new System.Drawing.Size(504, 148);
             this.rtbEventsLog.TabIndex = 0;
             this.rtbEventsLog.Text = "";

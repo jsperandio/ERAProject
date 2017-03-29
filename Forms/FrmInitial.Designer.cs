@@ -45,6 +45,14 @@
             this.lbPlayerHitPoints = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRemoveLuk = new System.Windows.Forms.Button();
+            this.btnRemoveDex = new System.Windows.Forms.Button();
+            this.btnRemoveSpd = new System.Windows.Forms.Button();
+            this.btnAddLuk = new System.Windows.Forms.Button();
+            this.btnAddDex = new System.Windows.Forms.Button();
+            this.btnAddSpd = new System.Windows.Forms.Button();
+            this.btnAddDef = new System.Windows.Forms.Button();
+            this.btnRemoveDef = new System.Windows.Forms.Button();
             this.ttbPlayerLuk = new System.Windows.Forms.TextBox();
             this.ttbPlayerDex = new System.Windows.Forms.TextBox();
             this.ttbPlayerSpd = new System.Windows.Forms.TextBox();
@@ -57,14 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRemoveDef = new System.Windows.Forms.Button();
-            this.btnAddDef = new System.Windows.Forms.Button();
-            this.btnAddSpd = new System.Windows.Forms.Button();
-            this.btnAddDex = new System.Windows.Forms.Button();
-            this.btnAddLuk = new System.Windows.Forms.Button();
-            this.btnRemoveSpd = new System.Windows.Forms.Button();
-            this.btnRemoveDex = new System.Windows.Forms.Button();
-            this.btnRemoveLuk = new System.Windows.Forms.Button();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -265,6 +265,94 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats ";
             // 
+            // btnRemoveLuk
+            // 
+            this.btnRemoveLuk.FlatAppearance.BorderSize = 0;
+            this.btnRemoveLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveLuk.Image")));
+            this.btnRemoveLuk.Location = new System.Drawing.Point(52, 89);
+            this.btnRemoveLuk.Name = "btnRemoveLuk";
+            this.btnRemoveLuk.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveLuk.TabIndex = 38;
+            this.btnRemoveLuk.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveDex
+            // 
+            this.btnRemoveDex.FlatAppearance.BorderSize = 0;
+            this.btnRemoveDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveDex.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDex.Image")));
+            this.btnRemoveDex.Location = new System.Drawing.Point(52, 72);
+            this.btnRemoveDex.Name = "btnRemoveDex";
+            this.btnRemoveDex.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveDex.TabIndex = 37;
+            this.btnRemoveDex.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveSpd
+            // 
+            this.btnRemoveSpd.FlatAppearance.BorderSize = 0;
+            this.btnRemoveSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveSpd.Image")));
+            this.btnRemoveSpd.Location = new System.Drawing.Point(52, 54);
+            this.btnRemoveSpd.Name = "btnRemoveSpd";
+            this.btnRemoveSpd.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveSpd.TabIndex = 36;
+            this.btnRemoveSpd.UseVisualStyleBackColor = true;
+            // 
+            // btnAddLuk
+            // 
+            this.btnAddLuk.FlatAppearance.BorderSize = 0;
+            this.btnAddLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLuk.Image")));
+            this.btnAddLuk.Location = new System.Drawing.Point(144, 89);
+            this.btnAddLuk.Name = "btnAddLuk";
+            this.btnAddLuk.Size = new System.Drawing.Size(27, 15);
+            this.btnAddLuk.TabIndex = 35;
+            this.btnAddLuk.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDex
+            // 
+            this.btnAddDex.FlatAppearance.BorderSize = 0;
+            this.btnAddDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDex.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDex.Image")));
+            this.btnAddDex.Location = new System.Drawing.Point(144, 72);
+            this.btnAddDex.Name = "btnAddDex";
+            this.btnAddDex.Size = new System.Drawing.Size(27, 15);
+            this.btnAddDex.TabIndex = 34;
+            this.btnAddDex.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSpd
+            // 
+            this.btnAddSpd.FlatAppearance.BorderSize = 0;
+            this.btnAddSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSpd.Image")));
+            this.btnAddSpd.Location = new System.Drawing.Point(144, 54);
+            this.btnAddSpd.Name = "btnAddSpd";
+            this.btnAddSpd.Size = new System.Drawing.Size(27, 15);
+            this.btnAddSpd.TabIndex = 33;
+            this.btnAddSpd.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDef
+            // 
+            this.btnAddDef.FlatAppearance.BorderSize = 0;
+            this.btnAddDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDef.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDef.Image")));
+            this.btnAddDef.Location = new System.Drawing.Point(144, 36);
+            this.btnAddDef.Name = "btnAddDef";
+            this.btnAddDef.Size = new System.Drawing.Size(27, 15);
+            this.btnAddDef.TabIndex = 32;
+            this.btnAddDef.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveDef
+            // 
+            this.btnRemoveDef.FlatAppearance.BorderSize = 0;
+            this.btnRemoveDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveDef.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDef.Image")));
+            this.btnRemoveDef.Location = new System.Drawing.Point(52, 36);
+            this.btnRemoveDef.Name = "btnRemoveDef";
+            this.btnRemoveDef.Size = new System.Drawing.Size(27, 15);
+            this.btnRemoveDef.TabIndex = 31;
+            this.btnRemoveDef.UseVisualStyleBackColor = true;
+            // 
             // ttbPlayerLuk
             // 
             this.ttbPlayerLuk.BackColor = System.Drawing.Color.Tan;
@@ -401,94 +489,6 @@
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "STR";
-            // 
-            // btnRemoveDef
-            // 
-            this.btnRemoveDef.FlatAppearance.BorderSize = 0;
-            this.btnRemoveDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveDef.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDef.Image")));
-            this.btnRemoveDef.Location = new System.Drawing.Point(52, 36);
-            this.btnRemoveDef.Name = "btnRemoveDef";
-            this.btnRemoveDef.Size = new System.Drawing.Size(27, 15);
-            this.btnRemoveDef.TabIndex = 31;
-            this.btnRemoveDef.UseVisualStyleBackColor = true;
-            // 
-            // btnAddDef
-            // 
-            this.btnAddDef.FlatAppearance.BorderSize = 0;
-            this.btnAddDef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDef.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDef.Image")));
-            this.btnAddDef.Location = new System.Drawing.Point(144, 36);
-            this.btnAddDef.Name = "btnAddDef";
-            this.btnAddDef.Size = new System.Drawing.Size(27, 15);
-            this.btnAddDef.TabIndex = 32;
-            this.btnAddDef.UseVisualStyleBackColor = true;
-            // 
-            // btnAddSpd
-            // 
-            this.btnAddSpd.FlatAppearance.BorderSize = 0;
-            this.btnAddSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnAddSpd.Image")));
-            this.btnAddSpd.Location = new System.Drawing.Point(144, 54);
-            this.btnAddSpd.Name = "btnAddSpd";
-            this.btnAddSpd.Size = new System.Drawing.Size(27, 15);
-            this.btnAddSpd.TabIndex = 33;
-            this.btnAddSpd.UseVisualStyleBackColor = true;
-            // 
-            // btnAddDex
-            // 
-            this.btnAddDex.FlatAppearance.BorderSize = 0;
-            this.btnAddDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDex.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDex.Image")));
-            this.btnAddDex.Location = new System.Drawing.Point(144, 72);
-            this.btnAddDex.Name = "btnAddDex";
-            this.btnAddDex.Size = new System.Drawing.Size(27, 15);
-            this.btnAddDex.TabIndex = 34;
-            this.btnAddDex.UseVisualStyleBackColor = true;
-            // 
-            // btnAddLuk
-            // 
-            this.btnAddLuk.FlatAppearance.BorderSize = 0;
-            this.btnAddLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLuk.Image")));
-            this.btnAddLuk.Location = new System.Drawing.Point(144, 89);
-            this.btnAddLuk.Name = "btnAddLuk";
-            this.btnAddLuk.Size = new System.Drawing.Size(27, 15);
-            this.btnAddLuk.TabIndex = 35;
-            this.btnAddLuk.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveSpd
-            // 
-            this.btnRemoveSpd.FlatAppearance.BorderSize = 0;
-            this.btnRemoveSpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveSpd.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveSpd.Image")));
-            this.btnRemoveSpd.Location = new System.Drawing.Point(52, 54);
-            this.btnRemoveSpd.Name = "btnRemoveSpd";
-            this.btnRemoveSpd.Size = new System.Drawing.Size(27, 15);
-            this.btnRemoveSpd.TabIndex = 36;
-            this.btnRemoveSpd.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveDex
-            // 
-            this.btnRemoveDex.FlatAppearance.BorderSize = 0;
-            this.btnRemoveDex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveDex.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveDex.Image")));
-            this.btnRemoveDex.Location = new System.Drawing.Point(52, 72);
-            this.btnRemoveDex.Name = "btnRemoveDex";
-            this.btnRemoveDex.Size = new System.Drawing.Size(27, 15);
-            this.btnRemoveDex.TabIndex = 37;
-            this.btnRemoveDex.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveLuk
-            // 
-            this.btnRemoveLuk.FlatAppearance.BorderSize = 0;
-            this.btnRemoveLuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveLuk.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveLuk.Image")));
-            this.btnRemoveLuk.Location = new System.Drawing.Point(52, 89);
-            this.btnRemoveLuk.Name = "btnRemoveLuk";
-            this.btnRemoveLuk.Size = new System.Drawing.Size(27, 15);
-            this.btnRemoveLuk.TabIndex = 38;
-            this.btnRemoveLuk.UseVisualStyleBackColor = true;
             // 
             // FrmInitial
             // 

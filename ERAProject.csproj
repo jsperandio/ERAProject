@@ -76,8 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Controllers\CtrlLog.cs" />
     <Compile Include="Class\Controllers\CtrlMap.cs" />
     <Compile Include="Class\Controllers\CtrlPlayer.cs" />
+    <Compile Include="Class\Log.cs" />
     <Compile Include="Class\GlobalVariables.cs" />
     <Compile Include="Class\Maps\Map.cs" />
     <Compile Include="Class\Player\Player.cs" />

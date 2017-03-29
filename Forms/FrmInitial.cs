@@ -1,6 +1,8 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
 using System;
+using System.Collections;
+using System.Collections.Specialized;
 using System.Windows.Forms;
 
 namespace ERAProject
@@ -9,22 +11,15 @@ namespace ERAProject
     {
         private CtrlPlayer ctrlPlayer;
         private CtrlMap ctrlMap;
+        private CtrlLog ctrlLog;
 
         public FrmInitial()
         {
-            InitializeGame();
             ctrlMap = GlobalVariables.CMap;
             ctrlPlayer = GlobalVariables.CPlayer;
+            ctrlLog = GlobalVariables.CLog;
             InitializeComponent();
             BindingControls();
-        }
-
-        private void InitializeGame()
-        {
-            GlobalVariables.CPlayer = new CtrlPlayer();
-            GlobalVariables.CPlayer.ConstructPlayer(1);
-            GlobalVariables.CMap = new CtrlMap();
-            GlobalVariables.CMap.ContructMap(1);
         }
 
         //private void T_Tick(object sender, EventArgs e)
@@ -41,7 +36,7 @@ namespace ERAProject
             //    t.Start();
             //else
             //    t.Stop();
-            ctrlPlayer.EventPlayer_DamageTaken(10);
+            ctrlPlayer.EventPlayer_DamageTaken(500);
         }
 
         private void FrmInitial_Load(object sender, EventArgs e)
@@ -51,7 +46,6 @@ namespace ERAProject
             //t.Interval = 1500;
             ctrlPlayer.SendPlayer(8, 2);
             ctrlMap.ShowMap(Width + Left, Top);
-
 
 
         }
@@ -84,8 +78,31 @@ namespace ERAProject
 
             prgbHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
 
+
+            ctrlLog.SetOnChangedEvent(OnLogTrackChange);
             #endregion
 
+        }
+
+        private void OnLogTrackChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    {
+                        for(int i=0; i<e.NewItems.Count; i++)
+                        {
+                            rtbEventsLog.AppendText(e.NewItems[i].ToString() + Environment.NewLine);
+                        }
+                        break;
+                    }
+                case NotifyCollectionChangedAction.Remove:
+                    {
+                        //OnRemove(sender, e);
+                        break;
+                    }
+
+            }
         }
     }
 }

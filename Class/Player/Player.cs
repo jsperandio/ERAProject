@@ -1,6 +1,5 @@
 ﻿using ERAProject.Class.Maps;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 
 namespace ERAProject.Class
@@ -81,6 +80,8 @@ namespace ERAProject.Class
             set
             {
                 _hitpoints = (value >= 0 ? (value <= _maxhitpoints ? value:_maxhitpoints) : 0);
+                if( _hitpoints == 0 )
+                    Death();   
                 OnPropertyChanged("Hitpoints");
             }
         }
@@ -144,6 +145,11 @@ namespace ERAProject.Class
         protected virtual void OnPropertyChanged(string property)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+
+        public void Death()
+        {
+            GlobalVariables.LogTrack.Add( new Log(System.DateTime.Now,"You are death!","Player"));
         }
     }
 }

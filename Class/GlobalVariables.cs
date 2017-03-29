@@ -1,5 +1,7 @@
 ﻿using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 
 namespace ERAProject.Class
@@ -10,6 +12,8 @@ namespace ERAProject.Class
         private static CtrlPlayer _cPlayer=null;
         private static Map _map=null;
         private static CtrlMap _cMap=null;
+        private static ObservableCollection<Log>  _logTrack = null;
+        private static CtrlLog _cLog = null;
         private static string _projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
         #region Encapsulate Fields
@@ -77,6 +81,8 @@ namespace ERAProject.Class
                 _projectPath = value;
             }
         }
+        internal static CtrlLog CLog { get => _cLog; set => _cLog = value; }
+        internal static ObservableCollection<Log> LogTrack { get => _logTrack; set => _logTrack = value; }
         #endregion
 
     }

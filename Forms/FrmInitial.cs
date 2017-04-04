@@ -1,8 +1,8 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
 using System;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject
@@ -24,7 +24,7 @@ namespace ERAProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ctrlPlayer.EventPlayer_DamageTaken(500);
+            ctrlPlayer.EventPlayer_DamageTaken(10);
         }
 
         private void FrmInitial_Load(object sender, EventArgs e)
@@ -75,16 +75,17 @@ namespace ERAProject
                     {
                         for(int i=0; i<e.NewItems.Count; i++)
                         {
-                            rtbEventsLog.AppendText(e.NewItems[i].ToString() + Environment.NewLine, Color.Red,Color.Blue);
+                            rtbEventsLog.AppendText((Log)e.NewItems[i]);
                             rtbEventsLog.ScrollToCaret();
+                            ((ObservableCollection<Log>)sender).RemoveAt(i);
                         }
                         break;
                     }
-                case NotifyCollectionChangedAction.Remove:
-                    {
-                        //OnRemove(sender, e);
-                        break;
-                    }
+                //case NotifyCollectionChangedAction.Remove:
+                //    {
+                //        //OnRemove(sender, e);
+                //        break;
+                //    }
 
             }
         }

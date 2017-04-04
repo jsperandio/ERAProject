@@ -60,11 +60,12 @@
             this.ttbPlayerStr = new System.Windows.Forms.TextBox();
             this.btnAddStr = new System.Windows.Forms.Button();
             this.btnRemoveStr = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbPlayerDex = new System.Windows.Forms.Label();
+            this.lbPlayerLuk = new System.Windows.Forms.Label();
+            this.lbPlayerSpd = new System.Windows.Forms.Label();
+            this.lbPlayerDef = new System.Windows.Forms.Label();
+            this.lbPlayerStr = new System.Windows.Forms.Label();
+            this.lbPointsLeft = new System.Windows.Forms.Label();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -145,6 +146,7 @@
             this.lbCurrentHitPoints.Size = new System.Drawing.Size(13, 13);
             this.lbCurrentHitPoints.TabIndex = 10;
             this.lbCurrentHitPoints.Text = "0";
+            this.lbCurrentHitPoints.Visible = false;
             // 
             // lbCurrentGold
             // 
@@ -238,6 +240,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbPointsLeft);
             this.groupBox1.Controls.Add(this.btnRemoveLuk);
             this.groupBox1.Controls.Add(this.btnRemoveDex);
             this.groupBox1.Controls.Add(this.btnRemoveSpd);
@@ -253,11 +256,11 @@
             this.groupBox1.Controls.Add(this.ttbPlayerStr);
             this.groupBox1.Controls.Add(this.btnAddStr);
             this.groupBox1.Controls.Add(this.btnRemoveStr);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbPlayerDex);
+            this.groupBox1.Controls.Add(this.lbPlayerLuk);
+            this.groupBox1.Controls.Add(this.lbPlayerSpd);
+            this.groupBox1.Controls.Add(this.lbPlayerDef);
+            this.groupBox1.Controls.Add(this.lbPlayerStr);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(281, 13);
             this.groupBox1.Name = "groupBox1";
@@ -441,55 +444,65 @@
             this.btnRemoveStr.TabIndex = 4;
             this.btnRemoveStr.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lbPlayerDex
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(7, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "DEX";
+            this.lbPlayerDex.AutoSize = true;
+            this.lbPlayerDex.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPlayerDex.Location = new System.Drawing.Point(7, 73);
+            this.lbPlayerDex.Name = "lbPlayerDex";
+            this.lbPlayerDex.Size = new System.Drawing.Size(29, 13);
+            this.lbPlayerDex.TabIndex = 8;
+            this.lbPlayerDex.Text = "DEX";
             // 
-            // label4
+            // lbPlayerLuk
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(6, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "LUK";
+            this.lbPlayerLuk.AutoSize = true;
+            this.lbPlayerLuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPlayerLuk.Location = new System.Drawing.Point(6, 90);
+            this.lbPlayerLuk.Name = "lbPlayerLuk";
+            this.lbPlayerLuk.Size = new System.Drawing.Size(28, 13);
+            this.lbPlayerLuk.TabIndex = 7;
+            this.lbPlayerLuk.Text = "LUK";
             // 
-            // label3
+            // lbPlayerSpd
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(6, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "SPD";
+            this.lbPlayerSpd.AutoSize = true;
+            this.lbPlayerSpd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPlayerSpd.Location = new System.Drawing.Point(6, 55);
+            this.lbPlayerSpd.Name = "lbPlayerSpd";
+            this.lbPlayerSpd.Size = new System.Drawing.Size(29, 13);
+            this.lbPlayerSpd.TabIndex = 6;
+            this.lbPlayerSpd.Text = "SPD";
             // 
-            // label2
+            // lbPlayerDef
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(6, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "DEF";
+            this.lbPlayerDef.AutoSize = true;
+            this.lbPlayerDef.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPlayerDef.Location = new System.Drawing.Point(6, 37);
+            this.lbPlayerDef.Name = "lbPlayerDef";
+            this.lbPlayerDef.Size = new System.Drawing.Size(28, 13);
+            this.lbPlayerDef.TabIndex = 5;
+            this.lbPlayerDef.Text = "DEF";
             // 
-            // label1
+            // lbPlayerStr
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "STR";
+            this.lbPlayerStr.AutoSize = true;
+            this.lbPlayerStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPlayerStr.Location = new System.Drawing.Point(6, 19);
+            this.lbPlayerStr.Name = "lbPlayerStr";
+            this.lbPlayerStr.Size = new System.Drawing.Size(29, 13);
+            this.lbPlayerStr.TabIndex = 4;
+            this.lbPlayerStr.Text = "STR";
+            // 
+            // lbPointsLeft
+            // 
+            this.lbPointsLeft.AutoSize = true;
+            this.lbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPointsLeft.Location = new System.Drawing.Point(177, 73);
+            this.lbPointsLeft.Name = "lbPointsLeft";
+            this.lbPointsLeft.Size = new System.Drawing.Size(57, 13);
+            this.lbPointsLeft.TabIndex = 39;
+            this.lbPointsLeft.Text = "Points Left";
             // 
             // FrmInitial
             // 
@@ -534,11 +547,11 @@
         private System.Windows.Forms.Label lbCurrentXp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbPlayerDex;
+        private System.Windows.Forms.Label lbPlayerLuk;
+        private System.Windows.Forms.Label lbPlayerSpd;
+        private System.Windows.Forms.Label lbPlayerDef;
+        private System.Windows.Forms.Label lbPlayerStr;
         private System.Windows.Forms.Button btnAddStr;
         private System.Windows.Forms.Button btnRemoveStr;
         private System.Windows.Forms.TextBox ttbPlayerStr;
@@ -555,6 +568,7 @@
         private System.Windows.Forms.Button btnAddSpd;
         private System.Windows.Forms.Button btnAddDef;
         private System.Windows.Forms.Button btnRemoveDef;
+        private System.Windows.Forms.Label lbPointsLeft;
     }
 }
 

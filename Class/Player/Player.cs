@@ -79,10 +79,10 @@ namespace ERAProject.Class
 
             set
             {
-                _hitpoints = (value >= 0 ? (value <= _maxhitpoints ? value:_maxhitpoints) : 0);
-                if( _hitpoints == 0 )
-                    Death();   
+                _hitpoints = (value >= 0 ? (value <= _maxhitpoints ? value : _maxhitpoints) : 0);
                 OnPropertyChanged("Hitpoints");
+                if (_hitpoints == 0)
+                    Death();
             }
         }
 
@@ -110,6 +110,7 @@ namespace ERAProject.Class
             set
             {
                 _playerCurrentTile = value;
+                Moviment(value);
             }
         }
 
@@ -137,7 +138,7 @@ namespace ERAProject.Class
             Level = 1;
             ExperiencePoints = 0;
             _playerCurrentTile = null;
-            PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\LoadFiles\\Human_Head-32.png");
+            PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\LoadFiles\\battle-gear.png");
             StatusPlayer = new StatusList();
         }
         #endregion
@@ -149,7 +150,13 @@ namespace ERAProject.Class
 
         public void Death()
         {
-            GlobalVariables.LogTrack.Add( new Log(System.DateTime.Now,"You are death!","Player"));
+            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "You are dead!", Name, LogEventType.CriticalEvent));
         }
+
+        private void Moviment(Tile t)
+        {
+            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Moving to tile {"+t.Row+","+t.Collum+"} !", Name, LogEventType.InformationEvent));
+        }
+
     }
 }

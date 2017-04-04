@@ -35,10 +35,17 @@ namespace ERAProject.Class.Controllers
         {
             GlobalVariables.User.PlayerCurrentTile = t;
         }
+        
+        public bool IsAlive()
+        {
+            return GlobalVariables.User.Hitpoints > 0;
+        }
 
         public void EventPlayer_DamageTaken(int damageTaken)
         {
             GlobalVariables.User.Hitpoints -= damageTaken;
+            if (IsAlive())
+                GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Damage Taken of " + damageTaken,"System",LogEventType.WarningEvent));
         }
     }
 }

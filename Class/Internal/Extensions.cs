@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject.Class
@@ -29,6 +24,31 @@ namespace ERAProject.Class
             rtb.SelectionBackColor = backgroundColor;
             rtb.AppendText(text);
             rtb.SelectionColor = rtb.ForeColor;
+        }
+
+        public static void AppendText(this RichTextBox rtb, Log l)
+        {
+            switch(l.LogType)
+            {
+                case LogEventType.CriticalEvent:
+                    {
+                        //Fundo preto 
+                        //Letra vermelha
+                        rtb.AppendText(l.ToString(), Color.Red, Color.Black);
+                        break;
+                    }
+                case LogEventType.WarningEvent:
+                    {
+                        //Letra vermelha
+                        rtb.AppendText(l.ToString(), Color.Red);
+                        break;
+                    }
+                case LogEventType.InformationEvent:
+                    {
+                        rtb.AppendText(l.ToString());
+                        break;
+                    }
+            }
         }
     }
 }

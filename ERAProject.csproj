@@ -132,7 +132,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="LoadFiles\battle-gear.png" />
     <Content Include="LoadFiles\Human_Head-32.png" />
+    <Content Include="LoadFiles\k_helmet.png" />
+    <Content Include="LoadFiles\map-marker-2-32.png" />
     <Content Include="LoadFiles\Map.txt" />
     <Content Include="LoadFiles\player-flag.png" />
   </ItemGroup>

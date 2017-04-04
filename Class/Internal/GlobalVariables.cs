@@ -1,6 +1,5 @@
 ﻿using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 

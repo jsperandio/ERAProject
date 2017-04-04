@@ -58,8 +58,10 @@ namespace ERAProject.Class.Controllers
             { 
                 PointF[] points = GlobalVariables.Map.HexToPoints(GetTileHeight(), tile.Point.X, tile.Point.Y);
 
-                float x = ((points[0].X + points[1].X) / 2);
-                float y = ((points[0].Y + points[1].Y) / 2);
+                //float x = ((points[0].X + points[1].X) / 2);
+                //float y = ((points[0].Y + points[1].Y) / 2);
+                float x = points[0].X+3;
+                float y = points[1].Y;
 
 
                 graphics.DrawImage(GlobalVariables.User.PlayerImage, x, y);

@@ -38,20 +38,29 @@ namespace ERAProject
             string controlPropName;
 
             #region BindingControlText
+
             controlPropName = "Text";
 
             grpbPlayerInfo.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Name"));
-            //lbCurrentHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
 
+            #region Labels
+
+            //lbCurrentHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
             lbCurrentLevel.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Level"));
             lbCurrentGold.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Gold"));
             lbCurrentXp.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "ExperiencePoints"));
+            lbTitle.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.Hint"));
+            #endregion
+
+            #region TextBox
 
             ttbPlayerStr.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Strength"));
             ttbPlayerDef.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Defense"));
             ttbPlayerSpd.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Speed"));
             ttbPlayerDex.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Dextery"));
             ttbPlayerLuk.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Luck"));
+
+            #endregion
 
             controlPropName = "Maximum";
 
@@ -63,6 +72,7 @@ namespace ERAProject
 
 
             ctrlLog.SetOnChangedEvent(OnLogTrackChange);
+
             #endregion
 
         }

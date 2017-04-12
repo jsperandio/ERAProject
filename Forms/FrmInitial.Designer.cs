@@ -45,6 +45,7 @@
             this.lbPlayerHitPoints = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbPointsLeft = new System.Windows.Forms.Label();
             this.btnRemoveLuk = new System.Windows.Forms.Button();
             this.btnRemoveDex = new System.Windows.Forms.Button();
             this.btnRemoveSpd = new System.Windows.Forms.Button();
@@ -65,10 +66,14 @@
             this.lbPlayerSpd = new System.Windows.Forms.Label();
             this.lbPlayerDef = new System.Windows.Forms.Label();
             this.lbPlayerStr = new System.Windows.Forms.Label();
-            this.lbPointsLeft = new System.Windows.Forms.Label();
+            this.ttbPointsLeft = new System.Windows.Forms.TextBox();
+            this.sttsBottomItens = new System.Windows.Forms.StatusStrip();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEvents
@@ -77,9 +82,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnEvents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnEvents.Controls.Add(this.rtbEventsLog);
-            this.pnEvents.Location = new System.Drawing.Point(13, 354);
+            this.pnEvents.Location = new System.Drawing.Point(13, 379);
             this.pnEvents.Name = "pnEvents";
-            this.pnEvents.Size = new System.Drawing.Size(513, 157);
+            this.pnEvents.Size = new System.Drawing.Size(539, 157);
             this.pnEvents.TabIndex = 0;
             // 
             // rtbEventsLog
@@ -90,7 +95,7 @@
             this.rtbEventsLog.Location = new System.Drawing.Point(4, 4);
             this.rtbEventsLog.Name = "rtbEventsLog";
             this.rtbEventsLog.ReadOnly = true;
-            this.rtbEventsLog.Size = new System.Drawing.Size(504, 148);
+            this.rtbEventsLog.Size = new System.Drawing.Size(530, 148);
             this.rtbEventsLog.TabIndex = 0;
             this.rtbEventsLog.Text = "";
             // 
@@ -108,7 +113,7 @@
             this.grpbPlayerInfo.Controls.Add(this.lbPlayerGold);
             this.grpbPlayerInfo.Controls.Add(this.lbPlayerHitPoints);
             this.grpbPlayerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbPlayerInfo.Location = new System.Drawing.Point(13, 13);
+            this.grpbPlayerInfo.Location = new System.Drawing.Point(12, 13);
             this.grpbPlayerInfo.Name = "grpbPlayerInfo";
             this.grpbPlayerInfo.Size = new System.Drawing.Size(262, 115);
             this.grpbPlayerInfo.TabIndex = 1;
@@ -230,7 +235,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 134);
+            this.button1.Location = new System.Drawing.Point(9, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -240,6 +245,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ttbPointsLeft);
             this.groupBox1.Controls.Add(this.lbPointsLeft);
             this.groupBox1.Controls.Add(this.btnRemoveLuk);
             this.groupBox1.Controls.Add(this.btnRemoveDex);
@@ -262,12 +268,22 @@
             this.groupBox1.Controls.Add(this.lbPlayerDef);
             this.groupBox1.Controls.Add(this.lbPlayerStr);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(281, 13);
+            this.groupBox1.Location = new System.Drawing.Point(290, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 115);
+            this.groupBox1.Size = new System.Drawing.Size(262, 115);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats ";
+            // 
+            // lbPointsLeft
+            // 
+            this.lbPointsLeft.AutoSize = true;
+            this.lbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPointsLeft.Location = new System.Drawing.Point(199, 73);
+            this.lbPointsLeft.Name = "lbPointsLeft";
+            this.lbPointsLeft.Size = new System.Drawing.Size(57, 13);
+            this.lbPointsLeft.TabIndex = 39;
+            this.lbPointsLeft.Text = "Points Left";
             // 
             // btnRemoveLuk
             // 
@@ -494,29 +510,67 @@
             this.lbPlayerStr.TabIndex = 4;
             this.lbPlayerStr.Text = "STR";
             // 
-            // lbPointsLeft
+            // ttbPointsLeft
             // 
-            this.lbPointsLeft.AutoSize = true;
-            this.lbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPointsLeft.Location = new System.Drawing.Point(177, 73);
-            this.lbPointsLeft.Name = "lbPointsLeft";
-            this.lbPointsLeft.Size = new System.Drawing.Size(57, 13);
-            this.lbPointsLeft.TabIndex = 39;
-            this.lbPointsLeft.Text = "Points Left";
+            this.ttbPointsLeft.BackColor = System.Drawing.Color.Tan;
+            this.ttbPointsLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ttbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ttbPointsLeft.Location = new System.Drawing.Point(199, 90);
+            this.ttbPointsLeft.Name = "ttbPointsLeft";
+            this.ttbPointsLeft.ReadOnly = true;
+            this.ttbPointsLeft.Size = new System.Drawing.Size(57, 13);
+            this.ttbPointsLeft.TabIndex = 40;
+            this.ttbPointsLeft.Text = "0";
+            this.ttbPointsLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // sttsBottomItens
+            // 
+            this.sttsBottomItens.Location = new System.Drawing.Point(0, 539);
+            this.sttsBottomItens.Name = "sttsBottomItens";
+            this.sttsBottomItens.Size = new System.Drawing.Size(564, 22);
+            this.sttsBottomItens.SizingGrip = false;
+            this.sttsBottomItens.TabIndex = 4;
+            // 
+            // pnTitle
+            // 
+            this.pnTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnTitle.BackColor = System.Drawing.Color.Red;
+            this.pnTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnTitle.Controls.Add(this.lbTitle);
+            this.pnTitle.Location = new System.Drawing.Point(0, 134);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(564, 30);
+            this.pnTitle.TabIndex = 5;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(560, 26);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "Welcome To Drafnstar";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTitle.UseCompatibleTextRendering = true;
             // 
             // FrmInitial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(538, 523);
+            this.ClientSize = new System.Drawing.Size(564, 561);
+            this.Controls.Add(this.pnTitle);
+            this.Controls.Add(this.sttsBottomItens);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grpbPlayerInfo);
             this.Controls.Add(this.pnEvents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(300, 350);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(300, 390);
             this.Name = "FrmInitial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ERAProject - Epic Rpg Adventure";
@@ -526,7 +580,9 @@
             this.grpbPlayerInfo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnTitle.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -569,6 +625,10 @@
         private System.Windows.Forms.Button btnAddDef;
         private System.Windows.Forms.Button btnRemoveDef;
         private System.Windows.Forms.Label lbPointsLeft;
+        private System.Windows.Forms.TextBox ttbPointsLeft;
+        private System.Windows.Forms.StatusStrip sttsBottomItens;
+        private System.Windows.Forms.Panel pnTitle;
+        private System.Windows.Forms.Label lbTitle;
     }
 }
 

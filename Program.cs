@@ -19,12 +19,13 @@ namespace ERAProject
 
         static void InitializeGame()
         {
-            Class.GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
-            Class.GlobalVariables.CPlayer.ConstructPlayer(1);
             Class.GlobalVariables.CMap = new Class.Controllers.CtrlMap();
-            Class.GlobalVariables.CMap.ContructMap(1);
             Class.GlobalVariables.CLog = new Class.Controllers.CtrlLog();
+            Class.GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
+            Class.GlobalVariables.CMap.ContructMap(1);
             Class.GlobalVariables.CLog.ConstructLog();
+            Class.GlobalVariables.CPlayer.ConstructPlayer(1);
+            
         }
     }
 }

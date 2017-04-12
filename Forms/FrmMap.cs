@@ -11,7 +11,6 @@ namespace ERAProject
     public partial class FrmMap : Form
     {
         private CtrlPlayer ctrlPlayer;
-
         private CtrlMap ctrlMap;
 
         public FrmMap()
@@ -34,7 +33,6 @@ namespace ERAProject
             //}
             
             ctrlMap.DrawBaseMap(e.Graphics,Pens.Black,pbMapViewer.ClientSize);
-
             ctrlMap.DrawPlayerOnMap(ctrlPlayer.GetPlayerTile(), e.Graphics);
             //ctrlMap.DrawStringOnTile(ctrlPlayer.GetPlayerTile(), e.Graphics, Font);
         }

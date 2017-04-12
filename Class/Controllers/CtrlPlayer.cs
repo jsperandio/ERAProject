@@ -8,6 +8,10 @@ namespace ERAProject.Class.Controllers
         public void ConstructPlayer(int playertype)
         {
             GlobalVariables.User = new Player();
+            if(playertype==1)
+            SendPlayer(8,2);
+            //To-Do
+            //mudar isso para a Initical City 
         }
 
         public Binding GetPlayerBinding(string controlPropertyName , string objectProperty)
@@ -18,6 +22,11 @@ namespace ERAProject.Class.Controllers
         public Binding GetPlayerStatusBinding(string controlPropertyName, string objectProperty)
         {
             return new Binding(controlPropertyName, GlobalVariables.User.StatusPlayer, objectProperty);
+        }
+
+        public Binding GetPlayerTileBinding(string controlPropertyName, string objectProperty)
+        {
+            return new Binding(controlPropertyName, GlobalVariables.User.PlayerCurrentTile, objectProperty);
         }
 
         public Tile GetPlayerTile()

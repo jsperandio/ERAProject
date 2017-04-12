@@ -100,7 +100,7 @@ namespace ERAProject.Class
             }
         }
 
-        internal Tile PlayerCurrentTile
+        public Tile PlayerCurrentTile
         {
             get
             {
@@ -110,6 +110,7 @@ namespace ERAProject.Class
             set
             {
                 _playerCurrentTile = value;
+                OnPropertyChanged("PlayerCurrentTile");
                 Moviment(value);
             }
         }

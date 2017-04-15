@@ -62,6 +62,7 @@ namespace ERAProject
 
             #endregion
 
+            #region ProgressBar
             controlPropName = "Maximum";
 
             prgbHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Maxhitpoints"));
@@ -70,6 +71,11 @@ namespace ERAProject
 
             prgbHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
 
+            #endregion
+
+            controlPropName = "BackColor";
+            pnTitle.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.TileColor"));
+            
 
             ctrlLog.SetOnChangedEvent(OnLogTrackChange);
 

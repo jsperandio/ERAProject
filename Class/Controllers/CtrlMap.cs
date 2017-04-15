@@ -87,5 +87,15 @@ namespace ERAProject.Class.Controllers
                 graphics.DrawString(GlobalVariables.User.Name, localFont, Brushes.Black, x, y, sf);
             }
         }
+
+        public Color GetTileColor(Tile t)
+        {
+            return t.TileColor;
+        }
+
+        public Brush GetTileBrushColor(Tile t)
+        {
+            return t.TileBrushColor;
+        }
     }
 }

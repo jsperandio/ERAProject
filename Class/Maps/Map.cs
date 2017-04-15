@@ -65,6 +65,8 @@ namespace ERAProject.Class.Maps
         }
         #endregion
 
+        #region External Loads
+
         // Load map by file
         public bool ImportMap()
         {
@@ -84,9 +86,6 @@ namespace ERAProject.Class.Maps
                         Tile t = new Tile();
                         PointF p = new PointF(x, i);
 
-                        t.Row = x;
-                        t.Collum = i;
-                        
                         t.Point = p;
                         t.Type = Convert.ToInt32(values[i]);
                         t.Hint = "Tipo " + values[i] + " do piso";
@@ -98,41 +97,17 @@ namespace ERAProject.Class.Maps
             return x > 0 ? true : false;
         }
 
+        #endregion
+
         #region Draw Methods
+
+        
 
         public void FillMapHexagons(Graphics gr)
         {
             for(int i=0; i<_tiles.Count-1;i++)
             {
-                Brush br = Brushes.Blue;
-                switch (_tiles[i].Type)
-                {
-                    //Campo
-                    case 1:
-                        {
-                            br = Brushes.LightGreen;
-                            break;
-                        }
-                    //Floresta
-                    case 2:
-                        {
-                            br = Brushes.Green;
-                            break;
-                        }
-                    //Montanha
-                    case 3:
-                        {
-                            br = Brushes.Gray;
-                            break;
-                        }
-                    //Cidade
-                    case 10:
-                        {
-                            br = Brushes.Red;
-                            break;
-                        }
-                  }
-                gr.FillPolygon(br, HexToPoints(_tileHeight, _tiles[i].Point.X, _tiles[i].Point.Y));
+                gr.FillPolygon(_tiles[i].TileBrushColor, HexToPoints(_tileHeight, _tiles[i].Point.X, _tiles[i].Point.Y));
             }
         }
 
@@ -192,6 +167,8 @@ namespace ERAProject.Class.Maps
         }
 
         #endregion
+
+        #region From to Methods
 
         // Return the points that define the indicated hexagon.
         public PointF[] HexToPoints(float height, float row, float col)
@@ -293,6 +270,8 @@ namespace ERAProject.Class.Maps
             Tile t = _tiles.Find(polyg => polyg.Point.Equals(polygon));
             return t;
         }
+
+        #endregion
 
         // Return the width of a hexagon.
         private float HexWidth(float height)

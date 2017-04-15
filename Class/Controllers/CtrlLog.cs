@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Windows.Forms;
 
@@ -25,7 +24,7 @@ namespace ERAProject.Class.Controllers
                 GlobalVariables.LogTrack.CollectionChanged += method;
                 result=true;
             }
-            catch(Exception e)
+            catch
             {
                 result=false;
             }

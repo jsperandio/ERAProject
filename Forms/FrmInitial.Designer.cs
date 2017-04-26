@@ -45,6 +45,7 @@
             this.lbPlayerHitPoints = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ttbPointsLeft = new System.Windows.Forms.TextBox();
             this.lbPointsLeft = new System.Windows.Forms.Label();
             this.btnRemoveLuk = new System.Windows.Forms.Button();
             this.btnRemoveDex = new System.Windows.Forms.Button();
@@ -66,14 +67,19 @@
             this.lbPlayerSpd = new System.Windows.Forms.Label();
             this.lbPlayerDef = new System.Windows.Forms.Label();
             this.lbPlayerStr = new System.Windows.Forms.Label();
-            this.ttbPointsLeft = new System.Windows.Forms.TextBox();
-            this.sttsBottomItens = new System.Windows.Forms.StatusStrip();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.tlsBottomItens = new System.Windows.Forms.ToolStrip();
+            this.tsBtnMap = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnBackpack = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnTitle.SuspendLayout();
+            this.tlsBottomItens.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEvents
@@ -84,7 +90,7 @@
             this.pnEvents.Controls.Add(this.rtbEventsLog);
             this.pnEvents.Location = new System.Drawing.Point(13, 379);
             this.pnEvents.Name = "pnEvents";
-            this.pnEvents.Size = new System.Drawing.Size(539, 157);
+            this.pnEvents.Size = new System.Drawing.Size(539, 143);
             this.pnEvents.TabIndex = 0;
             // 
             // rtbEventsLog
@@ -95,7 +101,7 @@
             this.rtbEventsLog.Location = new System.Drawing.Point(4, 4);
             this.rtbEventsLog.Name = "rtbEventsLog";
             this.rtbEventsLog.ReadOnly = true;
-            this.rtbEventsLog.Size = new System.Drawing.Size(530, 148);
+            this.rtbEventsLog.Size = new System.Drawing.Size(530, 134);
             this.rtbEventsLog.TabIndex = 0;
             this.rtbEventsLog.Text = "";
             // 
@@ -235,7 +241,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(9, 204);
+            this.button1.Location = new System.Drawing.Point(13, 170);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -274,6 +280,19 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stats ";
+            // 
+            // ttbPointsLeft
+            // 
+            this.ttbPointsLeft.BackColor = System.Drawing.Color.Tan;
+            this.ttbPointsLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ttbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ttbPointsLeft.Location = new System.Drawing.Point(199, 90);
+            this.ttbPointsLeft.Name = "ttbPointsLeft";
+            this.ttbPointsLeft.ReadOnly = true;
+            this.ttbPointsLeft.Size = new System.Drawing.Size(57, 13);
+            this.ttbPointsLeft.TabIndex = 40;
+            this.ttbPointsLeft.Text = "0";
+            this.ttbPointsLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbPointsLeft
             // 
@@ -510,27 +529,6 @@
             this.lbPlayerStr.TabIndex = 4;
             this.lbPlayerStr.Text = "STR";
             // 
-            // ttbPointsLeft
-            // 
-            this.ttbPointsLeft.BackColor = System.Drawing.Color.Tan;
-            this.ttbPointsLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ttbPointsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ttbPointsLeft.Location = new System.Drawing.Point(199, 90);
-            this.ttbPointsLeft.Name = "ttbPointsLeft";
-            this.ttbPointsLeft.ReadOnly = true;
-            this.ttbPointsLeft.Size = new System.Drawing.Size(57, 13);
-            this.ttbPointsLeft.TabIndex = 40;
-            this.ttbPointsLeft.Text = "0";
-            this.ttbPointsLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // sttsBottomItens
-            // 
-            this.sttsBottomItens.Location = new System.Drawing.Point(0, 539);
-            this.sttsBottomItens.Name = "sttsBottomItens";
-            this.sttsBottomItens.Size = new System.Drawing.Size(564, 22);
-            this.sttsBottomItens.SizingGrip = false;
-            this.sttsBottomItens.TabIndex = 4;
-            // 
             // pnTitle
             // 
             this.pnTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -555,14 +553,76 @@
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTitle.UseCompatibleTextRendering = true;
             // 
+            // tlsBottomItens
+            // 
+            this.tlsBottomItens.AutoSize = false;
+            this.tlsBottomItens.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tlsBottomItens.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlsBottomItens.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tlsBottomItens.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnMap,
+            this.toolStripSeparator1,
+            this.tsBtnBackpack,
+            this.toolStripSeparator2,
+            this.toolStripButton1});
+            this.tlsBottomItens.Location = new System.Drawing.Point(0, 525);
+            this.tlsBottomItens.Name = "tlsBottomItens";
+            this.tlsBottomItens.Size = new System.Drawing.Size(564, 36);
+            this.tlsBottomItens.TabIndex = 6;
+            this.tlsBottomItens.Text = "toolStrip1";
+            // 
+            // tsBtnMap
+            // 
+            this.tsBtnMap.AutoSize = false;
+            this.tsBtnMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnMap.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnMap.Image")));
+            this.tsBtnMap.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtnMap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnMap.Name = "tsBtnMap";
+            this.tsBtnMap.Size = new System.Drawing.Size(36, 36);
+            this.tsBtnMap.ToolTipText = "Show Map";
+            this.tsBtnMap.Click += new System.EventHandler(this.tsBtnMap_Click);
+            // 
+            // tsBtnBackpack
+            // 
+            this.tsBtnBackpack.AutoSize = false;
+            this.tsBtnBackpack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnBackpack.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBackpack.Image")));
+            this.tsBtnBackpack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtnBackpack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBackpack.Name = "tsBtnBackpack";
+            this.tsBtnBackpack.Size = new System.Drawing.Size(36, 36);
+            this.tsBtnBackpack.ToolTipText = "Show Backpack";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.ToolTipText = "Show Backpack";
+            // 
             // FrmInitial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(564, 561);
+            this.Controls.Add(this.tlsBottomItens);
             this.Controls.Add(this.pnTitle);
-            this.Controls.Add(this.sttsBottomItens);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grpbPlayerInfo);
@@ -581,8 +641,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnTitle.ResumeLayout(false);
+            this.tlsBottomItens.ResumeLayout(false);
+            this.tlsBottomItens.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -626,9 +687,14 @@
         private System.Windows.Forms.Button btnRemoveDef;
         private System.Windows.Forms.Label lbPointsLeft;
         private System.Windows.Forms.TextBox ttbPointsLeft;
-        private System.Windows.Forms.StatusStrip sttsBottomItens;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.ToolStrip tlsBottomItens;
+        private System.Windows.Forms.ToolStripButton tsBtnMap;
+        private System.Windows.Forms.ToolStripButton tsBtnBackpack;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

@@ -57,6 +57,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmMap";
             this.Text = "Map Viewer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMap_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbMapViewer)).EndInit();
             this.ResumeLayout(false);
 

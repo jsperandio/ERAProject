@@ -130,11 +130,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoadFiles\backpack-icon.png" />
     <Content Include="LoadFiles\battle-gear.png" />
     <Content Include="LoadFiles\Human_Head-32.png" />
     <Content Include="LoadFiles\k_helmet.png" />
+    <Content Include="LoadFiles\map-icon.png" />
     <Content Include="LoadFiles\map-marker-2-32.png" />
     <Content Include="LoadFiles\Map.txt" />
     <Content Include="LoadFiles\player-flag.png" />

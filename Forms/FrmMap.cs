@@ -100,5 +100,10 @@ namespace ERAProject
 
         }
 
+        private void FrmMap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+        }
     }
 }

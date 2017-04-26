@@ -5,6 +5,7 @@ namespace ERAProject.Class.Controllers
 {
     class CtrlMap
     {
+        public FrmMap FormMapViewer=null;
         public void ContructMap(int mapType)
         {
             GlobalVariables.Map= new Map(mapType);
@@ -13,9 +14,10 @@ namespace ERAProject.Class.Controllers
 
         public void ShowMap(int x, int y)
         {
-            FrmMap form_map = new FrmMap();
-            form_map.Show();
-            form_map.Location = new Point(x, y);
+            FormMapViewer=FormMapViewer ?? new FrmMap();
+            //FormMapViewer = new FrmMap();
+            FormMapViewer.Show();
+            FormMapViewer.Location = new Point(x, y);
         }
 
         public Tile GetTileByXy(int x, int y)

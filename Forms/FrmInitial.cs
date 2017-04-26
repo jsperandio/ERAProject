@@ -105,5 +105,10 @@ namespace ERAProject
 
             }
         }
+
+        private void tsBtnMap_Click(object sender, EventArgs e)
+        {
+            ctrlMap.ShowMap(Width + Left, Top);
+        }
     }
 }

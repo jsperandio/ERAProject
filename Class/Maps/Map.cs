@@ -9,7 +9,6 @@ namespace ERAProject.Class.Maps
     {
         private List<Tile> _selectedTiles;
         private List<Tile> _tiles;
-        // The height of a hexagon.
         private float _tileHeight;
         private int _mapStyle;
 
@@ -73,27 +72,25 @@ namespace ERAProject.Class.Maps
             int x = 0;
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
-            using (var fs = File.OpenRead(path + "\\LoadFiles\\Map.txt"))
-            using (var reader = new StreamReader(fs))
+            FileStream fs = File.OpenRead(path + "\\LoadFiles\\Map.txt");
+            StreamReader reader = new StreamReader(fs);
+            while (!reader.EndOfStream)
             {
-
-                while (!reader.EndOfStream)
+                string line = reader.ReadLine();
+                string[] values = line.Split(',');
+                for (int i = 0; i < values.Length - 1; i++)
                 {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(',');
-                    for (int i = 0; i < values.Length - 1; i++)
-                    {
-                        Tile t = new Tile();
-                        PointF p = new PointF(x, i);
+                    Tile t = new Tile();
+                    PointF p = new PointF(x, i);
 
-                        t.Point = p;
-                        t.Type = Convert.ToInt32(values[i]);
-                        t.Hint = "Tipo " + values[i] + " do piso";
-                        _tiles.Add(t);
-                    }
-                    x++;
+                    t.Point = p;
+                    t.Type = Convert.ToInt32(values[i]);
+                    t.Hint = "Tipo " + values[i] + " do piso";
+                    _tiles.Add(t);
                 }
+                x++;
             }
+            fs.Dispose();
             return x > 0 ? true : false;
         }
 
@@ -101,11 +98,11 @@ namespace ERAProject.Class.Maps
 
         #region Draw Methods
 
-        
+
 
         public void FillMapHexagons(Graphics gr)
         {
-            for(int i=0; i<_tiles.Count-1;i++)
+            for (int i = 0; i < _tiles.Count - 1; i++)
             {
                 gr.FillPolygon(_tiles[i].TileBrushColor, HexToPoints(_tileHeight, _tiles[i].Point.X, _tiles[i].Point.Y));
             }

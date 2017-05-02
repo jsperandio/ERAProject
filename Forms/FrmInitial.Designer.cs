@@ -71,9 +71,11 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.tlsBottomItens = new System.Windows.Forms.ToolStrip();
             this.tsBtnMap = new System.Windows.Forms.ToolStripButton();
-            this.tsBtnBackpack = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsBtnBackpack = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
@@ -88,9 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnEvents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnEvents.Controls.Add(this.rtbEventsLog);
-            this.pnEvents.Location = new System.Drawing.Point(13, 379);
+            this.pnEvents.Location = new System.Drawing.Point(12, 357);
             this.pnEvents.Name = "pnEvents";
-            this.pnEvents.Size = new System.Drawing.Size(539, 143);
+            this.pnEvents.Size = new System.Drawing.Size(540, 154);
             this.pnEvents.TabIndex = 0;
             // 
             // rtbEventsLog
@@ -101,7 +103,7 @@
             this.rtbEventsLog.Location = new System.Drawing.Point(4, 4);
             this.rtbEventsLog.Name = "rtbEventsLog";
             this.rtbEventsLog.ReadOnly = true;
-            this.rtbEventsLog.Size = new System.Drawing.Size(530, 134);
+            this.rtbEventsLog.Size = new System.Drawing.Size(531, 145);
             this.rtbEventsLog.TabIndex = 0;
             this.rtbEventsLog.Text = "";
             // 
@@ -556,7 +558,7 @@
             // tlsBottomItens
             // 
             this.tlsBottomItens.AutoSize = false;
-            this.tlsBottomItens.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tlsBottomItens.BackColor = System.Drawing.Color.DimGray;
             this.tlsBottomItens.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tlsBottomItens.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsBottomItens.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -564,6 +566,8 @@
             this.toolStripSeparator1,
             this.tsBtnBackpack,
             this.toolStripSeparator2,
+            this.toolStripButton2,
+            this.toolStripSeparator3,
             this.toolStripButton1});
             this.tlsBottomItens.Location = new System.Drawing.Point(0, 525);
             this.tlsBottomItens.Name = "tlsBottomItens";
@@ -580,8 +584,13 @@
             this.tsBtnMap.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnMap.Name = "tsBtnMap";
             this.tsBtnMap.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnMap.ToolTipText = "Show Map";
+            this.tsBtnMap.ToolTipText = "Map";
             this.tsBtnMap.Click += new System.EventHandler(this.tsBtnMap_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
             // 
             // tsBtnBackpack
             // 
@@ -592,17 +601,28 @@
             this.tsBtnBackpack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackpack.Name = "tsBtnBackpack";
             this.tsBtnBackpack.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnBackpack.ToolTipText = "Show Backpack";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
+            this.tsBtnBackpack.ToolTipText = "Backpack";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.AutoSize = false;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton2.ToolTipText = "Inventory";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 36);
             // 
             // toolStripButton1
             // 
@@ -613,7 +633,7 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton1.ToolTipText = "Show Backpack";
+            this.toolStripButton1.ToolTipText = "Quests";
             // 
             // FrmInitial
             // 
@@ -695,6 +715,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

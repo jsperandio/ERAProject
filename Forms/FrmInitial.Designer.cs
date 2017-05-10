@@ -43,7 +43,6 @@
             this.lbPlayerLevel = new System.Windows.Forms.Label();
             this.lbPlayerGold = new System.Windows.Forms.Label();
             this.lbPlayerHitPoints = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ttbPointsLeft = new System.Windows.Forms.TextBox();
             this.lbPointsLeft = new System.Windows.Forms.Label();
@@ -240,16 +239,6 @@
             this.lbPlayerHitPoints.Size = new System.Drawing.Size(28, 13);
             this.lbPlayerHitPoints.TabIndex = 2;
             this.lbPlayerHitPoints.Text = "HP :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -558,7 +547,7 @@
             // tlsBottomItens
             // 
             this.tlsBottomItens.AutoSize = false;
-            this.tlsBottomItens.BackColor = System.Drawing.Color.DimGray;
+            this.tlsBottomItens.BackColor = System.Drawing.Color.SaddleBrown;
             this.tlsBottomItens.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tlsBottomItens.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsBottomItens.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -602,6 +591,7 @@
             this.tsBtnBackpack.Name = "tsBtnBackpack";
             this.tsBtnBackpack.Size = new System.Drawing.Size(36, 36);
             this.tsBtnBackpack.ToolTipText = "Backpack";
+            this.tsBtnBackpack.Click += new System.EventHandler(this.tsBtnBackpack_Click);
             // 
             // toolStripSeparator2
             // 
@@ -627,6 +617,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.BackColor = System.Drawing.Color.SaddleBrown;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -644,7 +635,6 @@
             this.Controls.Add(this.tlsBottomItens);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.grpbPlayerInfo);
             this.Controls.Add(this.pnEvents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -682,7 +672,6 @@
         private System.Windows.Forms.Label lbCurrentGold;
         private System.Windows.Forms.Label lbCurrentLevel;
         private System.Windows.Forms.Label lbCurrentXp;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbPlayerDex;
         private System.Windows.Forms.Label lbPlayerLuk;

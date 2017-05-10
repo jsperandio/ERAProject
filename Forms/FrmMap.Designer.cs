@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMap));
             this.pbMapViewer = new System.Windows.Forms.PictureBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapViewer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbMapViewer
@@ -49,21 +47,11 @@
             this.pbMapViewer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbMapViewer_MouseMove);
             this.pbMapViewer.Resize += new System.EventHandler(this.pbMapViewer_Resize);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(230, 145);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 104);
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
-            // 
             // FrmMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pbMapViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
@@ -71,15 +59,12 @@
             this.Text = "Map Viewer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMap_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbMapViewer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pbMapViewer;
-        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

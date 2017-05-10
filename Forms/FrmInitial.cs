@@ -1,5 +1,6 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
+using ERAProject.Forms;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -20,11 +21,6 @@ namespace ERAProject
             ctrlLog = GlobalVariables.CLog;
             InitializeComponent();
             BindingControls();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ctrlPlayer.EventPlayer_DamageTaken(10);
         }
 
         private void FrmInitial_Load(object sender, EventArgs e)
@@ -110,5 +106,12 @@ namespace ERAProject
         {
             ctrlMap.ShowMap(Width + Left, Top);
         }
-    }
+
+        private void tsBtnBackpack_Click(object sender, EventArgs e)
+        {
+            FrmBackpack bp = new FrmBackpack();
+            bp.Show();
+
+        }
+}
 }

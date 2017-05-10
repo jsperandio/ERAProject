@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ERAProject.Class.Controllers
 {
-    class CtrlLog
+    public class CtrlLog
     {
         public Binding GetLogBinding(string controlPropertyName, string objectProperty)
         {

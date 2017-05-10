@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ERAProject.Class.Maps
 {
-    class Map
+    public class Map
     {
         private List<Tile> _selectedTiles;
         private List<Tile> _tiles;

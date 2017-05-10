@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ERAProject.Class.Controllers
 {
-    class CtrlPlayer
+    public class CtrlPlayer
     {
         public void ConstructPlayer(int playertype)
         {

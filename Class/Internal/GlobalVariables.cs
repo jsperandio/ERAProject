@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ERAProject.Class
 {
-    static class GlobalVariables
+    public static class GlobalVariables
     {
         private static Player _user=null;
         private static CtrlPlayer _cPlayer=null;

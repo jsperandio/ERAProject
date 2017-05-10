@@ -2,7 +2,7 @@
 
 namespace ERAProject.Class
 {
-    class StatusList : INotifyPropertyChanged
+    public class StatusList : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public int Strength { get; set; }

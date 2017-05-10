@@ -2,7 +2,7 @@
 
 namespace ERAProject.Class.Maps
 {
-    class Tile
+    public class Tile
     {
         private PointF _point;
         private int _type;
@@ -11,7 +11,7 @@ namespace ERAProject.Class.Maps
 
         public Brush TileBrushColor { get { return GetTileColor(); } } 
         public Color TileColor { get { return ((SolidBrush)TileBrushColor).Color; } }
-        public int Collum { get => (int)_point.Y; }
+        public int Column { get => (int)_point.Y; }
         public PointF Point { get => _point; set => _point = value; }
         public int Row { get => (int)_point.X; }
         public int Type { get => _type; set => _type = value; }

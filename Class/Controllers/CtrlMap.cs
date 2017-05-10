@@ -3,7 +3,7 @@ using ERAProject.Class.Maps;
 
 namespace ERAProject.Class.Controllers
 {
-    class CtrlMap
+    public class CtrlMap
     {
         public FrmMap FormMapViewer=null;
         public void ContructMap(int mapType)
@@ -83,7 +83,7 @@ namespace ERAProject.Class.Controllers
                 float x = (points[0].X + points[3].X) / 2;
                 float y = (points[1].Y + points[4].Y) / 2;
                 //string label = "(" + tile.Row.ToString() + ", " +
-                //     tile.Collum.ToString() + ")";
+                //     tile.Column.ToString() + ")";
                 Font localFont = new Font(originalFont, FontStyle.Bold);
                 
                 graphics.DrawString(GlobalVariables.User.Name, localFont, Brushes.Black, x, y, sf);

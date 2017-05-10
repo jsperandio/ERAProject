@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace ERAProject.Class
 {
-    class Player : INotifyPropertyChanged
+    public class Player : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string _name;
@@ -156,7 +156,7 @@ namespace ERAProject.Class
 
         private void Moviment(Tile t)
         {
-            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Moving to tile {"+t.Row+","+t.Collum+"} !", Name, LogEventType.InformationEvent));
+            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Moving to tile {"+t.Row+","+t.Column+"} !", Name, LogEventType.InformationEvent));
         }
 
     }

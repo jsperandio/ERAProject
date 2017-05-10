@@ -65,7 +65,7 @@ namespace ERAProject
                 Tile t = ctrlMap.ScreenToTile(e.Location);
                 if (t != null)
                 {
-                    MessageBox.Show(t.Hint + "\n Line:" + t.Row + " Collum:"+t.Collum);
+                    MessageBox.Show(t.Hint + "\n Line:" + t.Row + " Collum:"+t.Column);
                 }
             }
             if (ModifierKeys == Keys.Control)

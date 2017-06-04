@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using Dapper;
 using System.Data.SQLite;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+using System.IO;
 
 namespace ERAProject.Data
 {
     class DataAcess
     {
-        private static string _strCon = @"data source=C:\Users\joaov\Source\Repos\ERAProject\Eradb.db";
+        private static string _path = Directory.GetParent((Directory.GetParent(Environment.CurrentDirectory).FullName)).FullName;
+        private static string _strCon = "data source=" + _path + "\\Eradb.db";
+
 
         private static volatile DataAcess instance;
         private static object syncRoot = new Object();
@@ -19,96 +17,12 @@ namespace ERAProject.Data
         private static SQLiteConnection con = null;
         private static SQLiteTransaction trans = null;
         public string Mensagem { get; set; }
+        public string DbPath { get => (_path + "\\Eradb.db"); }
 
         private DataAcess()
         {
             utilizacoes = 0;
         }
-
-        public bool CreateIfNotExists()
-        {
-            bool allCorrect = true;
-            List<Type> dataClass = (from t in Assembly.GetExecutingAssembly().GetTypes()
-                                    where t.IsClass && t.Namespace == (GetType().Namespace + ".DataMap")
-                                    select t).ToList();
-
-            if (instance.Connect())
-            {
-                string sql_scrpt = "";
-                instance.BeginTransaction();
-
-                for (int i = 0; i < dataClass.Count(); i++)
-                {
-                    CreateScriptTable(dataClass[i], out sql_scrpt);
-                    if (instance.ExecuteNonQuery(sql_scrpt) == -1)
-                    {
-                        i = dataClass.Count();
-                        allCorrect = false;
-                    }
-                }
-                if (allCorrect)
-                    instance.CommitTransaction();
-                else
-                    instance.RollbackTransaction();
-
-                instance.Disconnect();
-                
-            }
-
-            return allCorrect;
-        }
-
-        private void CreateScriptTable(Type t, out string s)
-        {
-            StringBuilder sb = new StringBuilder();
-            PropertyInfo[] properts = t.GetProperties();
-
-            sb.AppendFormat("CREATE TABLE IF NOT EXISTS {0}(", t.Name);
-
-            for (int i = 0; i < properts.Length; i++)
-            {
-                sb.AppendFormat("{0} {1} {2}",
-                                properts[i].Name,
-                                PropertyInfoTypeToDBSQLiteType(properts[i].PropertyType),
-                                i < properts.Length - 1 ? "," : ""
-                                );
-            }
-            sb.Append(")");
-            s = sb.ToString();
-            sb.Clear();
-        }
-
-        private string PropertyInfoTypeToDBSQLiteType(Type t)
-        {
-            switch (t.Name.ToLower())
-            {
-                case "string":
-                    {
-                        return "TEXT";
-                    }
-                case "byte[]":
-                    {
-                        return "BLOB";
-                    }
-                case "long":
-                case "int64":
-                    {
-                        return "BIGINT";
-                    }
-                case "int":
-                case "int16":
-                case "int32":
-
-                    {
-                        return "INT";
-                    }
-
-                default:
-                    break;
-            }
-            return "";
-        }
-
 
         public static DataAcess Instance
         {
@@ -125,6 +39,7 @@ namespace ERAProject.Data
                 return instance;
             }
         }
+
 
         public bool Connect()
         {

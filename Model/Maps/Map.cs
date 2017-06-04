@@ -72,7 +72,7 @@ namespace ERAProject.Class.Maps
             int x = 0;
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
-            FileStream fs = File.OpenRead(path + "\\LoadFiles\\Map.txt");
+            FileStream fs = File.OpenRead(path + "\\Model\\LoadFiles\\Map.txt");
             StreamReader reader = new StreamReader(fs);
             while (!reader.EndOfStream)
             {

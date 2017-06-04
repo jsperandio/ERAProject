@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using ERAProject.Class.Internal;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject.Class

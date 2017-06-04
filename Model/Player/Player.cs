@@ -1,4 +1,5 @@
-﻿using ERAProject.Class.Maps;
+﻿using ERAProject.Class.Internal;
+using ERAProject.Class.Maps;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -139,8 +140,13 @@ namespace ERAProject.Class
             Level = 1;
             ExperiencePoints = 0;
             _playerCurrentTile = null;
-            PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\LoadFiles\\battle-gear.png");
+            PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\Model\\LoadFiles\\battle-gear.png");
             StatusPlayer = new StatusList();
+        }
+
+        public Player(PlayerType pt)
+        {
+
         }
         #endregion
 

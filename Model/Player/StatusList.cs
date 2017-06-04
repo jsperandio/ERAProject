@@ -5,6 +5,8 @@ namespace ERAProject.Class
     public class StatusList : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public int StatusId { get; set; }
         public int Strength { get; set; }
         public int Defense { get; set; }
         public int Speed { get; set; }

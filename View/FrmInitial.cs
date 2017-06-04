@@ -1,6 +1,5 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
-using ERAProject.Data;
 using ERAProject.Forms;
 using System;
 using System.Collections.ObjectModel;
@@ -26,7 +25,6 @@ namespace ERAProject
 
         private void FrmInitial_Load(object sender, EventArgs e)
         {
-            DataAcess.Instance.CreateIfNotExists();
             ctrlPlayer.SendPlayer(8, 2);
             ctrlMap.ShowMap(Width + Left, Top);
         }

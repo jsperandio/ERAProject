@@ -1,20 +1,38 @@
-﻿using ERAProject.Class.Maps;
+﻿using ERAProject.Class.Internal;
+using ERAProject.Class.Maps;
+using ERAProject.DAO;
 using System.Windows.Forms;
 
 namespace ERAProject.Class.Controllers
 {
     public class CtrlPlayer
     {
-        public void ConstructPlayer(int playertype)
+        public void ConstructPlayer(PlayerType playertype)
         {
-            GlobalVariables.User = new Player();
-            if(playertype==1)
-            SendPlayer(8,2);
-            //To-Do
-            //mudar isso para a Initical City 
+            switch(playertype)
+            {
+                case PlayerType.New:
+                    {
+                        GlobalVariables.User = new Player();
+                        //To-Do
+                        //mudar isso para a Initical City 
+                        SendPlayer(8, 2);
+                        break;
+                    }
+                case PlayerType.Load:
+                    {
+                        PlayerDAO pDao = new PlayerDAO();
+
+                        GlobalVariables.User = pDao.Carregar("Teste");
+                        SendPlayer(8, 2);
+                        break;
+                    }
+            }
+           
+          
         }
 
-        public Binding GetPlayerBinding(string controlPropertyName , string objectProperty)
+        public Binding GetPlayerBinding(string controlPropertyName, string objectProperty)
         {
             return new Binding(controlPropertyName, GlobalVariables.User, objectProperty);
         }
@@ -44,7 +62,7 @@ namespace ERAProject.Class.Controllers
         {
             GlobalVariables.User.PlayerCurrentTile = t;
         }
-        
+
         public bool IsAlive()
         {
             return GlobalVariables.User.Hitpoints > 0;
@@ -54,7 +72,7 @@ namespace ERAProject.Class.Controllers
         {
             GlobalVariables.User.Hitpoints -= damageTaken;
             if (IsAlive())
-                GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Damage Taken of " + damageTaken,"System",LogEventType.WarningEvent));
+                GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Damage Taken of " + damageTaken, "System", LogEventType.WarningEvent));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERAProject.Class.Internal;
+using System;
 using System.Windows.Forms;
 
 namespace ERAProject
@@ -24,7 +25,7 @@ namespace ERAProject
             Class.GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
             Class.GlobalVariables.CMap.ContructMap(1);
             Class.GlobalVariables.CLog.ConstructLog();
-            Class.GlobalVariables.CPlayer.ConstructPlayer(1);
+            Class.GlobalVariables.CPlayer.ConstructPlayer(PlayerType.Load);
             
         }
     }

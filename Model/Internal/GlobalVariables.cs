@@ -1,5 +1,6 @@
 ﻿using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 
@@ -14,6 +15,9 @@ namespace ERAProject.Class
         private static ObservableCollection<Log>  _logTrack = null;
         private static CtrlLog _cLog = null;
         private static string _projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+        private static string _path = Directory.GetParent((Directory.GetParent(Environment.CurrentDirectory).FullName)).FullName;
+        private static string _strCon = "data source=" + _path + "\\Eradb.db";
+
 
         #region Encapsulate Fields
         internal static Map Map
@@ -82,6 +86,7 @@ namespace ERAProject.Class
         }
         internal static CtrlLog CLog { get => _cLog; set => _cLog = value; }
         internal static ObservableCollection<Log> LogTrack { get => _logTrack; set => _logTrack = value; }
+        public static string StrCon { get => _strCon; set => _strCon = value; }
         #endregion
 
     }

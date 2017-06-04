@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="CustomProgress">
       <HintPath>.\CustomProgress.dll</HintPath>
     </Reference>
@@ -65,45 +68,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Controllers\CtrlLog.cs" />
-    <Compile Include="Class\Controllers\CtrlMap.cs" />
-    <Compile Include="Class\Controllers\CtrlPlayer.cs" />
-    <Compile Include="Class\Internal\Extensions.cs" />
-    <Compile Include="Class\Internal\Log.cs" />
-    <Compile Include="Class\Internal\GlobalVariables.cs" />
-    <Compile Include="Class\Maps\Map.cs" />
-    <Compile Include="Class\Player\Player.cs" />
-    <Compile Include="Class\Player\StatusList.cs" />
+    <Compile Include="Controllers\CtrlLog.cs" />
+    <Compile Include="Controllers\CtrlMap.cs" />
+    <Compile Include="Controllers\CtrlPlayer.cs" />
+    <Compile Include="DAO\PlayerDAO.cs" />
+    <Compile Include="Model\Internal\Enum.cs" />
+    <Compile Include="Model\Internal\Extensions.cs" />
+    <Compile Include="Model\Internal\Log.cs" />
+    <Compile Include="Model\Internal\GlobalVariables.cs" />
+    <Compile Include="Model\Maps\Map.cs" />
+    <Compile Include="Model\Player\Player.cs" />
+    <Compile Include="Model\Player\StatusList.cs" />
     <Compile Include="Data\DataAcess.cs" />
-    <Compile Include="Data\DataMap\PlayerData.cs" />
-    <Compile Include="Forms\FrmBackpack.cs">
+    <Compile Include="View\FrmBackpack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmBackpack.Designer.cs">
+    <Compile Include="View\FrmBackpack.Designer.cs">
       <DependentUpon>FrmBackpack.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmInitial.cs">
+    <Compile Include="View\FrmInitial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmInitial.Designer.cs">
+    <Compile Include="View\FrmInitial.Designer.cs">
       <DependentUpon>FrmInitial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmMap.cs">
+    <Compile Include="View\FrmMap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmMap.Designer.cs">
+    <Compile Include="View\FrmMap.Designer.cs">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Class\Maps\Tile.cs" />
-    <EmbeddedResource Include="Forms\FrmBackpack.resx">
+    <Compile Include="Model\Maps\Tile.cs" />
+    <EmbeddedResource Include="View\FrmBackpack.resx">
       <DependentUpon>FrmBackpack.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmInitial.resx">
+    <EmbeddedResource Include="View\FrmInitial.resx">
       <DependentUpon>FrmInitial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMap.resx">
+    <EmbeddedResource Include="View\FrmMap.resx">
       <DependentUpon>FrmMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,14 +137,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="LoadFiles\backpack-icon.png" />
-    <Content Include="LoadFiles\battle-gear.png" />
-    <Content Include="LoadFiles\Human_Head-32.png" />
-    <Content Include="LoadFiles\k_helmet.png" />
-    <Content Include="LoadFiles\map-icon.png" />
-    <Content Include="LoadFiles\map-marker-2-32.png" />
-    <Content Include="LoadFiles\Map.txt" />
-    <Content Include="LoadFiles\player-flag.png" />
+    <Content Include="Model\LoadFiles\backpack-icon.png" />
+    <Content Include="Model\LoadFiles\battle-gear.png" />
+    <Content Include="Model\LoadFiles\Human_Head-32.png" />
+    <Content Include="Model\LoadFiles\k_helmet.png" />
+    <Content Include="Model\LoadFiles\map-icon.png" />
+    <Content Include="Model\LoadFiles\map-marker-2-32.png" />
+    <Content Include="Model\LoadFiles\Map.txt" />
+    <Content Include="Model\LoadFiles\player-flag.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

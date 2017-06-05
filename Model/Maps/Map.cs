@@ -71,17 +71,24 @@ namespace ERAProject.Class.Maps
         {
             int x = 0;
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string line;
+            string[] values;
 
             FileStream fs = File.OpenRead(path + "\\Model\\LoadFiles\\Map.txt");
             StreamReader reader = new StreamReader(fs);
+            Tile t;
+            PointF p;
+
+            Clear();
+
             while (!reader.EndOfStream)
             {
-                string line = reader.ReadLine();
-                string[] values = line.Split(',');
-                for (int i = 0; i < values.Length - 1; i++)
+                line = reader.ReadLine();
+                values = line.Split(',');
+                for (int i = 0; i < values.Length-1; i++)
                 {
-                    Tile t = new Tile();
-                    PointF p = new PointF(x, i);
+                    t = new Tile();
+                    p = new PointF(x, i);
 
                     t.Point = p;
                     t.Type = Convert.ToInt32(values[i]);
@@ -274,6 +281,11 @@ namespace ERAProject.Class.Maps
         private float HexWidth(float height)
         {
             return (float)(4 * (height / 2 / Math.Sqrt(3)));
+        }
+
+        public void Clear()
+        {
+            _tiles.Clear();
         }
     }
 }

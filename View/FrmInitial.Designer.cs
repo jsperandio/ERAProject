@@ -573,7 +573,7 @@
             this.tsBtnMap.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnMap.Name = "tsBtnMap";
             this.tsBtnMap.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnMap.ToolTipText = "Map";
+            this.tsBtnMap.ToolTipText = "Map (Ctrl + M)";
             this.tsBtnMap.Click += new System.EventHandler(this.tsBtnMap_Click);
             // 
             // toolStripSeparator1
@@ -590,7 +590,7 @@
             this.tsBtnBackpack.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackpack.Name = "tsBtnBackpack";
             this.tsBtnBackpack.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnBackpack.ToolTipText = "Backpack";
+            this.tsBtnBackpack.ToolTipText = "Backpack (Ctrl + B)";
             this.tsBtnBackpack.Click += new System.EventHandler(this.tsBtnBackpack_Click);
             // 
             // toolStripSeparator2
@@ -639,12 +639,14 @@
             this.Controls.Add(this.pnEvents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 390);
             this.Name = "FrmInitial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ERAProject - Epic Rpg Adventure";
             this.Load += new System.EventHandler(this.FrmInitial_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmInitial_KeyDown);
             this.pnEvents.ResumeLayout(false);
             this.grpbPlayerInfo.ResumeLayout(false);
             this.grpbPlayerInfo.PerformLayout();

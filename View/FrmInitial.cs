@@ -25,7 +25,7 @@ namespace ERAProject
 
         private void FrmInitial_Load(object sender, EventArgs e)
         {
-            ctrlPlayer.SendPlayer(8, 2);
+            //ctrlPlayer.SendPlayer(8, 2);
             ctrlMap.ShowMap(Width + Left, Top);
         }
 
@@ -109,9 +109,22 @@ namespace ERAProject
 
         private void tsBtnBackpack_Click(object sender, EventArgs e)
         {
-            FrmBackpack bp = new FrmBackpack();
-            bp.Show();
+            ctrlPlayer.ShowBackpack(Left,Top);
+        }
 
+        private void FrmInitial_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.Control && e.KeyCode == Keys.M)      
+            {
+                tsBtnMap.PerformClick();
+                e.SuppressKeyPress = true;
+            }
+            if (e.Control && e.KeyCode == Keys.B)
+            {
+                tsBtnBackpack.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

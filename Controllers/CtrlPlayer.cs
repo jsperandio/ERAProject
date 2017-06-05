@@ -1,12 +1,15 @@
 ﻿using ERAProject.Class.Internal;
 using ERAProject.Class.Maps;
 using ERAProject.DAO;
+using ERAProject.Forms;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ERAProject.Class.Controllers
 {
     public class CtrlPlayer
     {
+        public FrmBackpack FormBackpack=null;
         public void ConstructPlayer(PlayerType playertype)
         {
             switch(playertype)
@@ -16,7 +19,7 @@ namespace ERAProject.Class.Controllers
                         GlobalVariables.User = new Player();
                         //To-Do
                         //mudar isso para a Initical City 
-                        SendPlayer(8, 2);
+                        SendPlayer(7, 3);
                         break;
                     }
                 case PlayerType.Load:
@@ -24,13 +27,24 @@ namespace ERAProject.Class.Controllers
                         PlayerDAO pDao = new PlayerDAO();
 
                         GlobalVariables.User = pDao.Carregar("Teste");
-                        SendPlayer(8, 2);
+                        SendPlayer(7, 3);
                         break;
                     }
             }
            
           
         }
+
+        public void ShowBackpack(int x,int y)
+        {
+            FormBackpack = FormBackpack ?? new FrmBackpack();
+            if (!FormBackpack.Visible)
+                FormBackpack.Show();
+            else
+                FormBackpack.Hide();
+            FormBackpack.Location = new Point(x - FormBackpack.Width, y);
+        }
+
 
         public Binding GetPlayerBinding(string controlPropertyName, string objectProperty)
         {

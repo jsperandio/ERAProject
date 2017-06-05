@@ -286,6 +286,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmBackpack";
             this.Text = "Backpack   [21/21]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmBackpack_FormClosing);
             this.flpBackpackSlots.ResumeLayout(false);
             this.ResumeLayout(false);
 

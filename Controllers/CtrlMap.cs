@@ -15,8 +15,10 @@ namespace ERAProject.Class.Controllers
         public void ShowMap(int x, int y)
         {
             FormMapViewer=FormMapViewer ?? new FrmMap();
-            //FormMapViewer = new FrmMap();
-            FormMapViewer.Show();
+            if (!FormMapViewer.Visible)
+                FormMapViewer.Show();
+            else
+                FormMapViewer.Hide();
             FormMapViewer.Location = new Point(x, y);
         }
 
@@ -98,6 +100,11 @@ namespace ERAProject.Class.Controllers
         public Brush GetTileBrushColor(Tile t)
         {
             return t.TileBrushColor;
+        }
+
+        public void Refresh()
+        {
+            GlobalVariables.Map.ImportMap();
         }
     }
 }

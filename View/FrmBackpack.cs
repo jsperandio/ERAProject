@@ -8,5 +8,11 @@ namespace ERAProject.Forms
         {
             InitializeComponent();
         }
+
+        private void FrmBackpack_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+        }
     }
 }

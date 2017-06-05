@@ -133,15 +133,15 @@ namespace ERAProject.Class
         #region Constructors
         public Player()
         {
-            Name = "John Doe";
-            Maxhitpoints = 100;
-            Hitpoints = Maxhitpoints;
-            Gold = 50;
-            Level = 1;
-            ExperiencePoints = 0;
-            _playerCurrentTile = null;
+            //Name = "John Doe";
+            //Maxhitpoints = 100;
+            //Hitpoints = Maxhitpoints;
+            //Gold = 50;
+            //Level = 1;
+            //ExperiencePoints = 0;
+            //_playerCurrentTile = null;
             PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\Model\\LoadFiles\\battle-gear.png");
-            StatusPlayer = new StatusList();
+            //StatusPlayer = new StatusList();
         }
 
         public Player(PlayerType pt)

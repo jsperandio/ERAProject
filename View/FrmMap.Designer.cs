@@ -54,10 +54,12 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.pbMapViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimizeBox = false;
             this.Name = "FrmMap";
             this.Text = "Map Viewer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMap_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMapViewer)).EndInit();
             this.ResumeLayout(false);
 

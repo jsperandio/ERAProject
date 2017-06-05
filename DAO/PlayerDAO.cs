@@ -26,11 +26,9 @@ namespace ERAProject.DAO
                             return p;
                         },
                         new { Name = name },
-                        splitOn: "StatusId").FirstOrDefault(); 
-                
+                        splitOn: "StatusId").FirstOrDefault();
+                connect.Close();
             }
-
-
             return player;
         }
     }

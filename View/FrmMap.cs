@@ -50,7 +50,7 @@ namespace ERAProject
         {
             Point mouse_location = e.Location;
             mouse_location= ctrlMap.ScreenToXy(mouse_location);
-            Text = "(" + mouse_location.X + ", " + mouse_location.Y + ")";
+            Text = "Map Viewer (" + mouse_location.X + ", " + mouse_location.Y + ")";
         }
 
         /*
@@ -104,6 +104,15 @@ namespace ERAProject
         {
             Hide();
             e.Cancel = true;
+        }
+
+        private void FrmMap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F5)
+            {
+                ctrlMap.Refresh();
+                pbMapViewer.Refresh();
+            }
         }
     }
 }

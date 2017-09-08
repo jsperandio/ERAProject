@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace ERAProject.Class.Maps
 {
@@ -85,7 +86,7 @@ namespace ERAProject.Class.Maps
             {
                 line = reader.ReadLine();
                 values = line.Split(',');
-                for (int i = 0; i < values.Length-1; i++)
+                for (int i = 0; i < values.Length - 1; i++)
                 {
                     t = new Tile();
                     p = new PointF(x, i);
@@ -105,7 +106,21 @@ namespace ERAProject.Class.Maps
 
         #region Draw Methods
 
+        public void DrawMapRect(Tile position, int tileOfHeight, int tilesOfWidth, Graphics gr)
+        {
 
+            List<Tile> rect = (from t in _tiles
+                               where (t.Row >= position.Row - (tileOfHeight/2) && t.Row <= position.Row + (tileOfHeight / 2)) &&
+                                     (t.Column >= position .Column - (tilesOfWidth/2) && t.Column <= position.Column + (tilesOfWidth / 2))
+                               select t).ToList();
+
+
+            for (int i = 0; i < rect.Count; i++)
+            {
+                gr.FillPolygon(rect[i].TileBrushColor, HexToPoints(_tileHeight, rect[i].Point.X, rect[i].Point.Y));
+
+            }
+        }
 
         public void FillMapHexagons(Graphics gr)
         {
@@ -160,6 +175,49 @@ namespace ERAProject.Class.Maps
             }
         }
 
+        public void DrawHexagonsGridWithPositons(Graphics gr, Pen pen,
+           float xmin, float xmax, float ymin, float ymax,
+           float height)
+        {
+            // Loop until a hexagon won't fit.
+            for (int row = 0; ; row++)
+            {
+                // Get the points for the row's first hexagon.
+                PointF[] points = HexToPoints(height, row, 0);
+
+                // If it doesn't fit, we're done.
+                if (points[4].Y > ymax) break;
+
+                // Draw the row.
+                for (int col = 0; ; col++)
+                {
+                    // Get the points for the row's next hexagon.
+                    points = HexToPoints(height, row, col);
+
+                    // If it doesn't fit horizontally,
+                    // we're done with this row.
+                    if (points[3].X > xmax) break;
+
+                    // If it fits vertically, draw it.
+                    if (points[4].Y <= ymax)
+                    {
+                        gr.DrawPolygon(pen, points);
+                        // Label the hexagon.
+                        using (StringFormat sf = new StringFormat())
+                        {
+                            sf.Alignment = StringAlignment.Center;
+                            sf.LineAlignment = StringAlignment.Center;
+                            float x = (points[0].X + points[3].X) / 2;
+                            float y = (points[1].Y + points[4].Y) / 2;
+                            string label = "(" + row.ToString() + ", " +
+                                col.ToString() + ")";
+                            gr.DrawString(label, SystemFonts.DefaultFont,
+                                Brushes.Black, x, y, sf);
+                        }
+                    }
+                }
+            }
+        }
 
         // Draw list hexagon tile in a graph
         public void DrawHexagons(List<PointF> hex, Brush color, Graphics graph)
@@ -186,7 +244,8 @@ namespace ERAProject.Class.Maps
             y += row * height;
 
             // If the column is odd, move down half a hex more.
-            if (col % 2 == 1) y += height / 2;
+            if (col % 2 == 1)
+                y += height / 2;
 
             // Move over for the column number.
             x += col * (width * 0.75f);

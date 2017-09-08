@@ -31,8 +31,8 @@ namespace ERAProject
             //    //e.Graphics.FillPolygon(Brushes.LightBlue,HexToPoints(HexHeight, point.X, point.Y));
             //    e.Graphics.FillPolygon(Brushes.Purple, HexToPoints(HexHeight, point.X, point.Y));
             //}
-            
-            ctrlMap.DrawBaseMap(e.Graphics,Pens.Black,pbMapViewer.ClientSize);
+
+            ctrlMap.DrawBaseMap(e.Graphics, Pens.Black, pbMapViewer.ClientSize);
             ctrlMap.DrawPlayerOnMap(ctrlPlayer.GetPlayerTile(), e.Graphics);
             //ctrlMap.DrawStringOnTile(ctrlPlayer.GetPlayerTile(), e.Graphics, Font);
         }

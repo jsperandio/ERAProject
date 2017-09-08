@@ -1,6 +1,7 @@
 ﻿using ERAProject.Class;
 using ERAProject.Class.Controllers;
 using ERAProject.Forms;
+using ERAProject.View;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -125,6 +126,12 @@ namespace ERAProject
                 tsBtnBackpack.PerformClick();
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmCamera c = new FrmCamera();
+            c.Show();
         }
     }
 }

@@ -54,6 +54,16 @@ namespace ERAProject.Class.Controllers
                                             0, clientSize.Width,
                                             0, clientSize.Height,
                                             GetTileHeight());
+
+        }
+
+        public void DrawMapPlayerOnCenter(Graphics graphics, Pen borderColor, Size clientSize)
+        {
+            GlobalVariables.Map.DrawMapRect(GlobalVariables.CPlayer.GetPlayerTile(),6,6, graphics);
+            GlobalVariables.Map.DrawHexagonsGridWithPositons(graphics, borderColor,
+                                                               0, clientSize.Width,
+                                                               0, clientSize.Height,
+                                                               GetTileHeight());
         }
 
         public void DrawPlayerOnMap(Tile tile, Graphics graphics)

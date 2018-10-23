@@ -1,6 +1,5 @@
-﻿using ERAProject.Class;
-using ERAProject.Class.Controllers;
-using ERAProject.Forms;
+﻿using ERAProject.Class.Controllers;
+using ERAProject.Model.System;
 using ERAProject.View;
 using System;
 using System.Collections.ObjectModel;
@@ -11,25 +10,31 @@ namespace ERAProject
 {
     public partial class FrmInitial : Form
     {
-        private CtrlPlayer ctrlPlayer;
-        private CtrlMap ctrlMap;
-        private CtrlLog ctrlLog;
+        private CtrlPlayer _ctrlPlayer;
+        private CtrlMap _ctrlMap;
+        private CtrlLog _ctrlLog;
 
         public FrmInitial()
         {
-            ctrlMap = GlobalVariables.CMap;
-            ctrlPlayer = GlobalVariables.CPlayer;
-            ctrlLog = GlobalVariables.CLog;
+            _ctrlMap = GlobalVariables.CMap;
+            _ctrlPlayer = GlobalVariables.CPlayer;
+            _ctrlLog = GlobalVariables.CLog;
+
             InitializeComponent();
             BindingControls();
         }
 
         private void FrmInitial_Load(object sender, EventArgs e)
         {
-            //ctrlPlayer.SendPlayer(8, 2);
-            ctrlMap.ShowMap(Width + Left, Top);
+            _ctrlPlayer.SendPlayer(8, 2);
+            _ctrlMap.ShowMap(Width + Left, Top);
         }
 
+        
+        /// <summary>
+        /// Metodo responsavel por realizar o espelhamento 
+        /// dos dados com a UI.
+        /// </summary>
         private void BindingControls()
         {
             string controlPropName;
@@ -38,43 +43,44 @@ namespace ERAProject
 
             controlPropName = "Text";
 
-            grpbPlayerInfo.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Name"));
+            grpbPlayerInfo.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "Name"));
 
             #region Labels
 
             //lbCurrentHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
-            lbCurrentLevel.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Level"));
-            lbCurrentGold.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Gold"));
-            lbCurrentXp.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "ExperiencePoints"));
-            lbTitle.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.Hint"));
+            lbCurrentLevel.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "Level"));
+            lbCurrentGold.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "Gold"));
+            lbCurrentXp.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "ExperiencePoints"));
+            lbTitle.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.Hint"));
+           
             #endregion
 
             #region TextBox
 
-            ttbPlayerStr.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Strength"));
-            ttbPlayerDef.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Defense"));
-            ttbPlayerSpd.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Speed"));
-            ttbPlayerDex.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Dextery"));
-            ttbPlayerLuk.DataBindings.Add(ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Luck"));
+            ttbPlayerStr.DataBindings.Add(_ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Strength"));
+            ttbPlayerDef.DataBindings.Add(_ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Defense"));
+            ttbPlayerSpd.DataBindings.Add(_ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Speed"));
+            ttbPlayerDex.DataBindings.Add(_ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Dextery"));
+            ttbPlayerLuk.DataBindings.Add(_ctrlPlayer.GetPlayerStatusBinding(controlPropName, "Luck"));
 
             #endregion
 
             #region ProgressBar
             controlPropName = "Maximum";
 
-            prgbHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Maxhitpoints"));
+            prgbHitPoints.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "Maxhitpoints"));
 
             controlPropName = "Value";
 
-            prgbHitPoints.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
+            prgbHitPoints.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "Hitpoints"));
 
             #endregion
 
             controlPropName = "BackColor";
-            pnTitle.DataBindings.Add(ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.TileColor"));
+            pnTitle.DataBindings.Add(_ctrlPlayer.GetPlayerBinding(controlPropName, "PlayerCurrentTile.TileColor"));
 
 
-            ctrlLog.SetOnChangedEvent(OnLogTrackChange);
+            _ctrlLog.SetOnChangedEvent(OnLogTrackChange);
 
             #endregion
 
@@ -103,14 +109,14 @@ namespace ERAProject
             }
         }
 
-        private void tsBtnMap_Click(object sender, EventArgs e)
+        private void TsBtnMap_Click(object sender, EventArgs e)
         {
-            ctrlMap.ShowMap(Width + Left, Top);
+            _ctrlMap.ShowMap(Width + Left, Top);
         }
 
-        private void tsBtnBackpack_Click(object sender, EventArgs e)
+        private void TsBtnBackpack_Click(object sender, EventArgs e)
         {
-            ctrlPlayer.ShowBackpack(Left,Top);
+            _ctrlPlayer.ShowBackpack(Left,Top);
         }
 
         private void FrmInitial_KeyDown(object sender, KeyEventArgs e)
@@ -128,7 +134,7 @@ namespace ERAProject
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButton1_Click(object sender, EventArgs e)
         {
             FrmCamera c = new FrmCamera();
             c.Show();

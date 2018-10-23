@@ -1,8 +1,7 @@
-﻿using ERAProject.Class.Internal;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ERAProject.Class
+namespace ERAProject.Model.System
 {
     public static class Extensions
     {

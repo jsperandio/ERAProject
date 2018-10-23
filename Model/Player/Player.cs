@@ -1,5 +1,5 @@
-﻿using ERAProject.Class.Internal;
-using ERAProject.Class.Maps;
+﻿using ERAProject.Class.Maps;
+using ERAProject.Model.System;
 using System.ComponentModel;
 using System.Drawing;
 

@@ -1,10 +1,11 @@
-﻿using ERAProject.Class.Controllers;
+﻿using ERAProject.Class;
+using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
 
-namespace ERAProject.Class
+namespace ERAProject.Model.System
 {
     public static class GlobalVariables
     {

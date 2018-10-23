@@ -1,6 +1,6 @@
-﻿using ERAProject.Class;
-using ERAProject.Class.Controllers;
+﻿using ERAProject.Class.Controllers;
 using ERAProject.Class.Maps;
+using ERAProject.Model.System;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;

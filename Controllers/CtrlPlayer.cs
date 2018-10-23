@@ -1,7 +1,7 @@
-﻿using ERAProject.Class.Internal;
-using ERAProject.Class.Maps;
+﻿using ERAProject.Class.Maps;
 using ERAProject.DAO;
 using ERAProject.Forms;
+using ERAProject.Model.System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -42,6 +42,7 @@ namespace ERAProject.Class.Controllers
                 FormBackpack.Show();
             else
                 FormBackpack.Hide();
+
             FormBackpack.Location = new Point(x - FormBackpack.Width, y);
         }
 

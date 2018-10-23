@@ -36,14 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="CustomProgress">
       <HintPath>.\CustomProgress.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -72,10 +69,11 @@
     <Compile Include="Controllers\CtrlMap.cs" />
     <Compile Include="Controllers\CtrlPlayer.cs" />
     <Compile Include="DAO\PlayerDAO.cs" />
-    <Compile Include="Model\Internal\Enum.cs" />
-    <Compile Include="Model\Internal\Extensions.cs" />
-    <Compile Include="Model\Internal\Log.cs" />
-    <Compile Include="Model\Internal\GlobalVariables.cs" />
+    <Compile Include="Model\System\Enum.cs" />
+    <Compile Include="Model\System\Extensions.cs" />
+    <Compile Include="Model\System\Log.cs" />
+    <Compile Include="Model\System\GlobalVariables.cs" />
+    <Compile Include="Model\System\Session.cs" />
     <Compile Include="Model\Maps\Map.cs" />
     <Compile Include="Model\Player\Player.cs" />
     <Compile Include="Model\Player\StatusList.cs" />

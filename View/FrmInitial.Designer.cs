@@ -43,7 +43,7 @@
             this.lbPlayerLevel = new System.Windows.Forms.Label();
             this.lbPlayerGold = new System.Windows.Forms.Label();
             this.lbPlayerHitPoints = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpbPlayerStats = new System.Windows.Forms.GroupBox();
             this.ttbPointsLeft = new System.Windows.Forms.TextBox();
             this.lbPointsLeft = new System.Windows.Forms.Label();
             this.btnRemoveLuk = new System.Windows.Forms.Button();
@@ -80,7 +80,7 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.pnEvents.SuspendLayout();
             this.grpbPlayerInfo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpbPlayerStats.SuspendLayout();
             this.pnTitle.SuspendLayout();
             this.tlsBottomItens.SuspendLayout();
             this.SuspendLayout();
@@ -242,37 +242,37 @@
             this.lbPlayerHitPoints.TabIndex = 2;
             this.lbPlayerHitPoints.Text = "HP :";
             // 
-            // groupBox1
+            // grpbPlayerStats
             // 
-            this.groupBox1.Controls.Add(this.ttbPointsLeft);
-            this.groupBox1.Controls.Add(this.lbPointsLeft);
-            this.groupBox1.Controls.Add(this.btnRemoveLuk);
-            this.groupBox1.Controls.Add(this.btnRemoveDex);
-            this.groupBox1.Controls.Add(this.btnRemoveSpd);
-            this.groupBox1.Controls.Add(this.btnAddLuk);
-            this.groupBox1.Controls.Add(this.btnAddDex);
-            this.groupBox1.Controls.Add(this.btnAddSpd);
-            this.groupBox1.Controls.Add(this.btnAddDef);
-            this.groupBox1.Controls.Add(this.btnRemoveDef);
-            this.groupBox1.Controls.Add(this.ttbPlayerLuk);
-            this.groupBox1.Controls.Add(this.ttbPlayerDex);
-            this.groupBox1.Controls.Add(this.ttbPlayerSpd);
-            this.groupBox1.Controls.Add(this.ttbPlayerDef);
-            this.groupBox1.Controls.Add(this.ttbPlayerStr);
-            this.groupBox1.Controls.Add(this.btnAddStr);
-            this.groupBox1.Controls.Add(this.btnRemoveStr);
-            this.groupBox1.Controls.Add(this.lbPlayerDex);
-            this.groupBox1.Controls.Add(this.lbPlayerLuk);
-            this.groupBox1.Controls.Add(this.lbPlayerSpd);
-            this.groupBox1.Controls.Add(this.lbPlayerDef);
-            this.groupBox1.Controls.Add(this.lbPlayerStr);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(290, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 115);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Stats ";
+            this.grpbPlayerStats.Controls.Add(this.ttbPointsLeft);
+            this.grpbPlayerStats.Controls.Add(this.lbPointsLeft);
+            this.grpbPlayerStats.Controls.Add(this.btnRemoveLuk);
+            this.grpbPlayerStats.Controls.Add(this.btnRemoveDex);
+            this.grpbPlayerStats.Controls.Add(this.btnRemoveSpd);
+            this.grpbPlayerStats.Controls.Add(this.btnAddLuk);
+            this.grpbPlayerStats.Controls.Add(this.btnAddDex);
+            this.grpbPlayerStats.Controls.Add(this.btnAddSpd);
+            this.grpbPlayerStats.Controls.Add(this.btnAddDef);
+            this.grpbPlayerStats.Controls.Add(this.btnRemoveDef);
+            this.grpbPlayerStats.Controls.Add(this.ttbPlayerLuk);
+            this.grpbPlayerStats.Controls.Add(this.ttbPlayerDex);
+            this.grpbPlayerStats.Controls.Add(this.ttbPlayerSpd);
+            this.grpbPlayerStats.Controls.Add(this.ttbPlayerDef);
+            this.grpbPlayerStats.Controls.Add(this.ttbPlayerStr);
+            this.grpbPlayerStats.Controls.Add(this.btnAddStr);
+            this.grpbPlayerStats.Controls.Add(this.btnRemoveStr);
+            this.grpbPlayerStats.Controls.Add(this.lbPlayerDex);
+            this.grpbPlayerStats.Controls.Add(this.lbPlayerLuk);
+            this.grpbPlayerStats.Controls.Add(this.lbPlayerSpd);
+            this.grpbPlayerStats.Controls.Add(this.lbPlayerDef);
+            this.grpbPlayerStats.Controls.Add(this.lbPlayerStr);
+            this.grpbPlayerStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.grpbPlayerStats.Location = new System.Drawing.Point(290, 13);
+            this.grpbPlayerStats.Name = "grpbPlayerStats";
+            this.grpbPlayerStats.Size = new System.Drawing.Size(262, 115);
+            this.grpbPlayerStats.TabIndex = 3;
+            this.grpbPlayerStats.TabStop = false;
+            this.grpbPlayerStats.Text = "Stats ";
             // 
             // ttbPointsLeft
             // 
@@ -578,7 +578,7 @@
             this.tsBtnMap.Name = "tsBtnMap";
             this.tsBtnMap.Size = new System.Drawing.Size(36, 36);
             this.tsBtnMap.ToolTipText = "Map (Ctrl + M)";
-            this.tsBtnMap.Click += new System.EventHandler(this.tsBtnMap_Click);
+            this.tsBtnMap.Click += new System.EventHandler(this.TsBtnMap_Click);
             // 
             // toolStripSeparator1
             // 
@@ -595,7 +595,7 @@
             this.tsBtnBackpack.Name = "tsBtnBackpack";
             this.tsBtnBackpack.Size = new System.Drawing.Size(36, 36);
             this.tsBtnBackpack.ToolTipText = "Backpack (Ctrl + B)";
-            this.tsBtnBackpack.Click += new System.EventHandler(this.tsBtnBackpack_Click);
+            this.tsBtnBackpack.Click += new System.EventHandler(this.TsBtnBackpack_Click);
             // 
             // toolStripSeparator2
             // 
@@ -629,7 +629,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.ToolTipText = "Quests";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // toolStripSeparator4
             // 
@@ -656,7 +656,7 @@
             this.ClientSize = new System.Drawing.Size(564, 561);
             this.Controls.Add(this.tlsBottomItens);
             this.Controls.Add(this.pnTitle);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpbPlayerStats);
             this.Controls.Add(this.grpbPlayerInfo);
             this.Controls.Add(this.pnEvents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -672,8 +672,8 @@
             this.pnEvents.ResumeLayout(false);
             this.grpbPlayerInfo.ResumeLayout(false);
             this.grpbPlayerInfo.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpbPlayerStats.ResumeLayout(false);
+            this.grpbPlayerStats.PerformLayout();
             this.pnTitle.ResumeLayout(false);
             this.tlsBottomItens.ResumeLayout(false);
             this.tlsBottomItens.PerformLayout();
@@ -696,7 +696,7 @@
         private System.Windows.Forms.Label lbCurrentGold;
         private System.Windows.Forms.Label lbCurrentLevel;
         private System.Windows.Forms.Label lbCurrentXp;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpbPlayerStats;
         private System.Windows.Forms.Label lbPlayerDex;
         private System.Windows.Forms.Label lbPlayerLuk;
         private System.Windows.Forms.Label lbPlayerSpd;

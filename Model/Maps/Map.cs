@@ -110,7 +110,8 @@ namespace ERAProject.Class.Maps
         {
 
             List<Tile> rect = (from t in _tiles
-                               where (t.Row >= position.Row - (tileOfHeight/2) && t.Row <= position.Row + (tileOfHeight / 2)) &&
+                               where (t.Row >= position.Row - (tileOfHeight/2) && t.Row <= position.Row + (tileOfHeight / 2)) 
+                                                                                        &&
                                      (t.Column >= position .Column - (tilesOfWidth/2) && t.Column <= position.Column + (tilesOfWidth / 2))
                                select t).ToList();
 
@@ -118,7 +119,6 @@ namespace ERAProject.Class.Maps
             for (int i = 0; i < rect.Count; i++)
             {
                 gr.FillPolygon(rect[i].TileBrushColor, HexToPoints(_tileHeight, rect[i].Point.X, rect[i].Point.Y));
-
             }
         }
 

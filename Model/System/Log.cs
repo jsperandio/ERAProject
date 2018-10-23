@@ -1,7 +1,6 @@
-﻿using ERAProject.Class.Internal;
-using System;
+﻿using System;
 
-namespace ERAProject.Class
+namespace ERAProject.Model.System
 {
     public class Log
     {

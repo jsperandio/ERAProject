@@ -1,4 +1,4 @@
-﻿namespace ERAProject.Class.Internal
+﻿namespace ERAProject.Model.System
 {
     public enum LogEventType : int
     {
@@ -15,9 +15,5 @@
         Blank = 0,
         New = 1,
         Load = 2
-    }
-    public class Enum
-    {
-
     }
 }

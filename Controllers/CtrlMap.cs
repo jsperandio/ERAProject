@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using ERAProject.Class.Maps;
+using ERAProject.Model.System;
 
 namespace ERAProject.Class.Controllers
 {
@@ -60,10 +61,11 @@ namespace ERAProject.Class.Controllers
         public void DrawMapPlayerOnCenter(Graphics graphics, Pen borderColor, Size clientSize)
         {
             GlobalVariables.Map.DrawMapRect(GlobalVariables.CPlayer.GetPlayerTile(),6,6, graphics);
-            GlobalVariables.Map.DrawHexagonsGridWithPositons(graphics, borderColor,
-                                                               0, clientSize.Width,
-                                                               0, clientSize.Height,
-                                                               GetTileHeight());
+
+            //GlobalVariables.Map.DrawHexagonsGridWithPositons(graphics, borderColor,
+            //                                                   0, clientSize.Width,
+            //                                                   0, clientSize.Height,
+            //                                                   GetTileHeight());
         }
 
         public void DrawPlayerOnMap(Tile tile, Graphics graphics)

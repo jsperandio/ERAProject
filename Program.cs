@@ -1,4 +1,4 @@
-﻿using ERAProject.Class.Internal;
+﻿using ERAProject.Model.System;
 using System;
 using System.Windows.Forms;
 
@@ -14,18 +14,24 @@ namespace ERAProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            InitializeSystem();
             InitializeGame();
             Application.Run(new FrmInitial());
         }
 
+        private static void InitializeSystem()
+        {
+            //
+        }
+
         static void InitializeGame()
         {
-            Class.GlobalVariables.CMap = new Class.Controllers.CtrlMap();
-            Class.GlobalVariables.CLog = new Class.Controllers.CtrlLog();
-            Class.GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
-            Class.GlobalVariables.CMap.ContructMap(1);
-            Class.GlobalVariables.CLog.ConstructLog();
-            Class.GlobalVariables.CPlayer.ConstructPlayer(PlayerType.Load);
+            GlobalVariables.CMap = new Class.Controllers.CtrlMap();
+            GlobalVariables.CLog = new Class.Controllers.CtrlLog();
+            GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
+            GlobalVariables.CMap.ContructMap(1);
+            GlobalVariables.CLog.ConstructLog();
+            GlobalVariables.CPlayer.ConstructPlayer(PlayerType.Load);
             
         }
     }

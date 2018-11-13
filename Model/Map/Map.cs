@@ -10,54 +10,27 @@ namespace ERAProject.Class.Maps
     {
         private List<Tile> _selectedTiles;
         private List<Tile> _tiles;
-        private float _tileHeight;
-        private int _mapStyle;
+        public int MapStyle { get; set; }
+        public float TileHeight { get; set; }
+        public int OffsetMiniMap { get; set; }
 
-        #region Encapsulate Fields
-
-        public float TileHeight
-        {
-            get
-            {
-                return _tileHeight;
-            }
-
-            set
-            {
-                _tileHeight = value;
-            }
-        }
-
-        public int MapStyle
-        {
-            get
-            {
-                return _mapStyle;
-            }
-
-            set
-            {
-                _mapStyle = value;
-            }
-        }
-
-        #endregion
 
         #region Constructors
 
-        public Map(int mapStyleCreate)
+        public Map(int mapStyleCreate , int off_set_minimap)
         {
+            OffsetMiniMap = off_set_minimap;
             MapStyle = mapStyleCreate;
             if (mapStyleCreate == 1)
             {
-                _tileHeight = 32;
+                TileHeight = 32;
                 _tiles = new List<Tile>();
                 _selectedTiles = new List<Tile>();
                 ImportMap();
             }
             if (mapStyleCreate == 2)
             {
-                _tileHeight = 16;
+                TileHeight = 16;
                 _tiles = new List<Tile>();
                 _selectedTiles = new List<Tile>();
                 ImportMap();
@@ -109,16 +82,46 @@ namespace ERAProject.Class.Maps
         public void DrawMapRect(Tile position, int tileOfHeight, int tilesOfWidth, Graphics gr)
         {
 
-            List<Tile> rect = (from t in _tiles
-                               where (t.Row >= position.Row - (tileOfHeight/2) && t.Row <= position.Row + (tileOfHeight / 2)) 
+            List<Tile> rect = (
+                                from t in _tiles
+                                where (t.Row >= position.Row - (tileOfHeight / 2) && t.Row <= position.Row + (tileOfHeight / 2))
                                                                                         &&
-                                     (t.Column >= position .Column - (tilesOfWidth/2) && t.Column <= position.Column + (tilesOfWidth / 2))
-                               select t).ToList();
+                                     (t.Column >= position.Column - (tilesOfWidth / 2) && t.Column <= position.Column + (tilesOfWidth / 2))
+                               select t
+                              ).ToList();
 
 
             for (int i = 0; i < rect.Count; i++)
             {
-                gr.FillPolygon(rect[i].TileBrushColor, HexToPoints(_tileHeight, rect[i].Point.X, rect[i].Point.Y));
+                gr.FillPolygon(rect[i].TileBrushColor, HexagonToPoints(TileHeight, rect[i].Point.X, rect[i].Point.Y));
+            }
+        }
+
+        public void DrawMapRectOnTopLeft(Graphics gr, Tile position, out float offset_x,out float offset_y)
+        {
+            List<Tile> rect = (
+                                from t in _tiles.AsParallel()
+                                where (t.Row >= position.Row - (OffsetMiniMap / 2) && t.Row <= position.Row + (OffsetMiniMap / 2))
+                                                                                        &&
+                                     (t.Column >= position.Column - (OffsetMiniMap / 2) && t.Column <= position.Column + (OffsetMiniMap / 2))
+                                select t
+                              ).ToList();
+
+            PointF[] points_hexagon = HexagonToPoints(TileHeight, rect[0].Point.X, rect[0].Point.Y);
+            float minus_x = offset_x = points_hexagon[0].X;
+            float minus_y = offset_y = points_hexagon[1].Y;
+
+            for (int i = 0; i < rect.Count; i++)
+            {
+                points_hexagon = HexagonToPoints(TileHeight, rect[i].Point.X, rect[i].Point.Y);
+
+                points_hexagon = (
+                                    from p in points_hexagon.AsParallel()
+                                    select new PointF(p.X - minus_x, p.Y - minus_y)
+                                  ).ToArray();
+
+                gr.DrawPolygon(Pens.Black, points_hexagon);
+                gr.FillPolygon(rect[i].TileBrushColor, points_hexagon);
             }
         }
 
@@ -126,7 +129,7 @@ namespace ERAProject.Class.Maps
         {
             for (int i = 0; i < _tiles.Count - 1; i++)
             {
-                gr.FillPolygon(_tiles[i].TileBrushColor, HexToPoints(_tileHeight, _tiles[i].Point.X, _tiles[i].Point.Y));
+                gr.FillPolygon(_tiles[i].TileBrushColor, HexagonToPoints(TileHeight, _tiles[i].Point.X, _tiles[i].Point.Y));
             }
         }
 
@@ -139,7 +142,7 @@ namespace ERAProject.Class.Maps
             for (int row = 0; ; row++)
             {
                 // Get the points for the row's first hexagon.
-                PointF[] points = HexToPoints(height, row, 0);
+                PointF[] points = HexagonToPoints(height, row, 0);
 
                 // If it doesn't fit, we're done.
                 if (points[4].Y > ymax) break;
@@ -148,7 +151,7 @@ namespace ERAProject.Class.Maps
                 for (int col = 0; ; col++)
                 {
                     // Get the points for the row's next hexagon.
-                    points = HexToPoints(height, row, col);
+                    points = HexagonToPoints(height, row, col);
 
                     // If it doesn't fit horizontally,
                     // we're done with this row.
@@ -183,7 +186,7 @@ namespace ERAProject.Class.Maps
             for (int row = 0; ; row++)
             {
                 // Get the points for the row's first hexagon.
-                PointF[] points = HexToPoints(height, row, 0);
+                PointF[] points = HexagonToPoints(height, row, 0);
 
                 // If it doesn't fit, we're done.
                 if (points[4].Y > ymax) break;
@@ -192,7 +195,7 @@ namespace ERAProject.Class.Maps
                 for (int col = 0; ; col++)
                 {
                     // Get the points for the row's next hexagon.
-                    points = HexToPoints(height, row, col);
+                    points = HexagonToPoints(height, row, col);
 
                     // If it doesn't fit horizontally,
                     // we're done with this row.
@@ -224,7 +227,7 @@ namespace ERAProject.Class.Maps
         {
             foreach (PointF point in hex)
             {
-                graph.FillPolygon(color, HexToPoints(_tileHeight, point.X, point.Y));
+                graph.FillPolygon(color, HexagonToPoints(TileHeight, point.X, point.Y));
             }
         }
 
@@ -233,10 +236,10 @@ namespace ERAProject.Class.Maps
         #region From to Methods
 
         // Return the points that define the indicated hexagon.
-        public PointF[] HexToPoints(float height, float row, float col)
+        public PointF[] HexagonToPoints(float height, float row, float col)
         {
             // Start with the leftmost corner of the upper left hexagon.
-            float width = HexWidth(height);
+            float width = HexagonWidth(height);
             float y = height / 2;
             float x = 0;
 
@@ -263,11 +266,11 @@ namespace ERAProject.Class.Maps
         }
 
         // Return the row and column of the hexagon at this point.
-        public void PointToHex(float x, float y, float height,
+        public void PointToHexagon(float x, float y, float height,
          out int row, out int col)
         {
             // Find the test rectangle containing the point.
-            float width = HexWidth(height);
+            float width = HexagonWidth(height);
             col = (int)(x / (width * 0.75f));
 
             if (col % 2 == 0)
@@ -327,8 +330,7 @@ namespace ERAProject.Class.Maps
 
         public Tile PointToTile(float x, float y)
         {
-            int a = 0, b = 0;
-            PointToHex(x, y, _tileHeight, out a, out b);
+            PointToHexagon(x, y, TileHeight, out int a, out int b);
             PointF polygon = new PointF(a, b);
             Tile t = _tiles.Find(polyg => polyg.Point.Equals(polygon));
             return t;
@@ -337,7 +339,7 @@ namespace ERAProject.Class.Maps
         #endregion
 
         // Return the width of a hexagon.
-        private float HexWidth(float height)
+        private float HexagonWidth(float height)
         {
             return (float)(4 * (height / 2 / Math.Sqrt(3)));
         }

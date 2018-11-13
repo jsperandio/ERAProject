@@ -9,85 +9,26 @@ namespace ERAProject.Model.System
 {
     public static class GlobalVariables
     {
-        private static Player _user=null;
-        private static CtrlPlayer _cPlayer=null;
-        private static Map _map=null;
-        private static CtrlMap _cMap=null;
-        private static ObservableCollection<Log>  _logTrack = null;
-        private static CtrlLog _cLog = null;
-        private static string _projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         private static string _path = Directory.GetParent((Directory.GetParent(Environment.CurrentDirectory).FullName)).FullName;
-        private static string _strCon = "data source=" + _path + "\\Eradb.db";
 
 
         #region Encapsulate Fields
-        internal static Map Map
-        {
-            get
-            {
-                return _map;
-            }
+        internal static Map Map { get; set; } = null;
 
-            set
-            {
-                _map = value;
-            }
-        }
+        internal static CtrlMap CMap { get; set; } = null;
 
-        internal static CtrlMap CMap
-        {
-            get
-            {
-                return _cMap;
-            }
+        internal static Player User { get; set; } = null;
 
-            set
-            {
-                _cMap = value;
-            }
-        }
+        internal static CtrlPlayer CPlayer { get; set; } = null;
 
-        internal static Player User
-        {
-            get
-            {
-                return _user;
-            }
+        public static string ProjectPath { get; set; } = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
-            set
-            {
-                _user = value;
-            }
-        }
+        internal static CtrlLog CLog { get; set; } = null;
 
-        internal static CtrlPlayer CPlayer
-        {
-            get
-            {
-                return _cPlayer;
-            }
+        internal static ObservableCollection<Log> LogTrack { get; set; } = null;
 
-            set
-            {
-                _cPlayer = value;
-            }
-        }
+        public static string StrCon { get; set; } = "data source=" + _path + "\\Eradb.db";
 
-        public static string ProjectPath
-        {
-            get
-            {
-                return _projectPath;
-            }
-
-            set
-            {
-                _projectPath = value;
-            }
-        }
-        internal static CtrlLog CLog { get => _cLog; set => _cLog = value; }
-        internal static ObservableCollection<Log> LogTrack { get => _logTrack; set => _logTrack = value; }
-        public static string StrCon { get => _strCon; set => _strCon = value; }
         #endregion
 
     }

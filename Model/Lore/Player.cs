@@ -146,6 +146,30 @@ namespace ERAProject.Class
 
         public Player(PlayerType pt)
         {
+            switch (pt)
+            {
+                case PlayerType.New:
+                    {
+                        Name = "John Doe";
+                        Maxhitpoints = 100;
+                        Hitpoints = Maxhitpoints;
+                        Gold = 50;
+                        Level = 1;
+                        ExperiencePoints = 0;
+                        //_playerCurrentTile = null;
+                        PlayerImage = Image.FromFile(GlobalVariables.ProjectPath + "\\Model\\LoadFiles\\battle-gear.png");
+                        StatusPlayer = new StatusList();
+                        break;
+                    }
+                case PlayerType.Load:
+                    {
+                        break;
+                    }
+                case PlayerType.Blank:
+                    {
+                        break;
+                    }
+            }
 
         }
         #endregion
@@ -162,7 +186,7 @@ namespace ERAProject.Class
 
         private void Moviment(Tile t)
         {
-            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Moving to tile {"+t.Row+","+t.Column+"} !", Name, LogEventType.InformationEvent));
+            GlobalVariables.LogTrack.Add(new Log(System.DateTime.Now, "Moving to tile {" + t.Row + "," + t.Column + "} !", Name, LogEventType.InformationEvent));
         }
 
     }

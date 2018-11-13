@@ -28,36 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PbMap = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PbMap)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PbMap
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 261);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.Resize += new System.EventHandler(this.pictureBox1_Resize);
+            this.PbMap.BackColor = System.Drawing.Color.Tan;
+            this.PbMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PbMap.Location = new System.Drawing.Point(0, 0);
+            this.PbMap.Name = "PbMap";
+            this.PbMap.Size = new System.Drawing.Size(214, 211);
+            this.PbMap.TabIndex = 0;
+            this.PbMap.TabStop = false;
+            this.PbMap.Paint += new System.Windows.Forms.PaintEventHandler(this.PbMap_Paint);
+            this.PbMap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbMap_MouseClick);
+            this.PbMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbMap_MouseMove);
+            this.PbMap.Resize += new System.EventHandler(this.PbMap_Resize);
             // 
             // FrmCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(214, 211);
+            this.Controls.Add(this.PbMap);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "FrmCamera";
             this.Text = "FrmCamera";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbMap)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PbMap;
     }
 }

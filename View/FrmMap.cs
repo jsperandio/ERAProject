@@ -18,7 +18,6 @@ namespace ERAProject
             ctrlPlayer = GlobalVariables.CPlayer;
             ctrlMap = GlobalVariables.CMap;
             InitializeComponent();
-            pbMapViewer.Left += 100; 
         }
 
         private void pbMapViewer_Paint(object sender, PaintEventArgs e)

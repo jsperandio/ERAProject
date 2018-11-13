@@ -26,7 +26,7 @@ namespace ERAProject
 
         private void FrmInitial_Load(object sender, EventArgs e)
         {
-            _ctrlPlayer.SendPlayer(8, 2);
+            //_ctrlPlayer.SendPlayer(8, 2);
             _ctrlMap.ShowMap(Width + Left, Top);
         }
 

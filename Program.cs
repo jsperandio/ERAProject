@@ -31,7 +31,7 @@ namespace ERAProject
             GlobalVariables.CPlayer = new Class.Controllers.CtrlPlayer();
             GlobalVariables.CMap.ContructMap(1);
             GlobalVariables.CLog.ConstructLog();
-            GlobalVariables.CPlayer.ConstructPlayer(PlayerType.Load);
+            GlobalVariables.CPlayer.ConstructPlayer(PlayerType.New);
             
         }
     }

@@ -16,7 +16,7 @@ namespace ERAProject.Class.Controllers
             {
                 case PlayerType.New:
                     {
-                        GlobalVariables.User = new Player();
+                        GlobalVariables.User = new Player(playertype);
                         //To-Do
                         //mudar isso para a Initical City 
                         SendPlayer(7, 3);

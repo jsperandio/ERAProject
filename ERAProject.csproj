@@ -74,9 +74,9 @@
     <Compile Include="Model\System\Log.cs" />
     <Compile Include="Model\System\GlobalVariables.cs" />
     <Compile Include="Model\System\Session.cs" />
-    <Compile Include="Model\Maps\Map.cs" />
-    <Compile Include="Model\Player\Player.cs" />
-    <Compile Include="Model\Player\StatusList.cs" />
+    <Compile Include="Model\Map\Map.cs" />
+    <Compile Include="Model\Lore\Player.cs" />
+    <Compile Include="Model\Lore\StatusList.cs" />
     <Compile Include="Data\DataAcess.cs" />
     <Compile Include="View\FrmBackpack.cs">
       <SubType>Form</SubType>
@@ -104,7 +104,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Maps\Tile.cs" />
+    <Compile Include="Model\Map\Tile.cs" />
     <EmbeddedResource Include="View\FrmBackpack.resx">
       <DependentUpon>FrmBackpack.cs</DependentUpon>
     </EmbeddedResource>

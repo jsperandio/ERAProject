@@ -4,18 +4,13 @@ namespace ERAProject.Class.Maps
 {
     public class Tile
     {
-        private PointF _point;
-        private int _type;
-        private string _hint;
-
-
         public Brush TileBrushColor { get { return GetTileColor(); } } 
         public Color TileColor { get { return ((SolidBrush)TileBrushColor).Color; } }
-        public int Column { get => (int)_point.Y; }
-        public PointF Point { get => _point; set => _point = value; }
-        public int Row { get => (int)_point.X; }
-        public int Type { get => _type; set => _type = value; }
-        public string Hint { get => _hint; set => _hint = value; }
+        public int Column { get => (int)Point.Y; }
+        public PointF Point { get; set; }
+        public int Row { get => (int)Point.X; }
+        public int Type { get; set; }
+        public string Hint { get; set; }
 
         public Tile()
         {
@@ -26,7 +21,7 @@ namespace ERAProject.Class.Maps
         private Brush GetTileColor()
         {
             Brush br = Brushes.Blue;
-            switch (_type)
+            switch (Type)
             {
                 //Campo
                 case 1:
